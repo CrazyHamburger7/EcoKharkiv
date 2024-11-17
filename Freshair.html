@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Екологія Харкова</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #e8f5e9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    .header h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+      margin-right: auto;
+    }
+    .scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scrollToTop img {
+  width: 50px;
+  height: 50px;
+}
+
+    .nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flex container for navigation items */
+  justify-content: center; /* Center align the nav links */
+}
+
+.nav-links .dropdown {
+  position: relative;
+  display: inline-block; /* Keep dropdown inline */
+  margin-right: 20px;
+}
+
+/* Style for the dropdown menu */
+.nav-links .dropdown-content {
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: #08420f;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners */
+  list-style-type: none; /* Remove bullet points */
+  display: block; /* Ensures the items are displayed vertically */
+}
+
+.nav-links .dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners for dropdown items */
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #155014;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px; /* Rounded corners for links */
+}
+
+.nav-links a:hover {
+  color: #80e27e;
+  background-color: rgba(128, 226, 126, 0.2);
+}
+
+.nav-links li {
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Display dropdown content when hovering */
+.nav-links li:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Smooth visibility */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+    .lang-button {
+      background-color: #388e3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+      margin-left: 20px;
+      font-size: medium;
+    }
+    .lang-button:hover {
+      color: #80e27e;
+    }
+    main {
+      flex: 1;
+      margin-top: 80px;
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 30px;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    main h2 {
+      color: #388e3c;
+      font-size: 32px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .content-container {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 25px;
+      background-color: #f1f8e9;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      color: #444;
+    }
+    .content-container img {
+      width: 48%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .content-text {
+      width: 48%;
+      padding: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .footer {
+      background-color: #388e3c;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      position: relative;
+      margin-top: auto;
+      font-size: 14px;
+    }
+    .footer p {
+      font-size: 16px;
+    }
+    .video-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 20px;
+      margin: 10px 5px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .video-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 720px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .video-link:hover {
+      background-color: #80e27e;
+      color: #333;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    .video-link i {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+    @media (max-width: 768px) {
+      .header {
+        padding: 10px 20px;
+      }
+      .header h1 {
+        font-size: 22px;
+        margin-right: 0;
+      }
+      .nav-links a {
+        margin-left: 15px;
+        font-size: 14px;
+      }
+      .content-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .content-container img {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      .content-text {
+        width: 80%;
+      }
+      .video-link {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+    }
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 20px;
+      }
+      main h2 {
+        font-size: 26px;
+      }
+      .nav-links a {
+        font-size: 14px;
+        margin-left: 10px;
+      }
+      .content-container {
+        padding: 15px;
+      }
+      .content-container img {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      .content-text {
+        width: 90%;
+        font-size: 16px;
+      }
+      .footer p {
+        font-size: 14px;
+      }
+      /* Responsive Video Container */
+.video-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;  /* Centers the video horizontally */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.video-container iframe {
+  max-width: 100%;  /* Makes the video responsive */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the video links */
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #388e3c;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.video-link:hover {
+  background-color: #80e27e;
+  color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-link i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-container img {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .content-text {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-container img {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .content-text {
+    width: 90%;
+    font-size: 16px;
+  }
+}
+
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1 id="title">Екологія Харкова</h1>
+    <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Головна</a></li>
+          <li class="dropdown">
+            <a href="#">Сторінки</a>
+            <ul class="dropdown-content">
+              <li><a href="contact.html">Історія Харкова</a></li>
+              <li><a href="Problems.html">Екологічні проблеми Харкова</a></li>
+              <li><a href="Trash.html">Стан та переробка відходів</a></li>
+              <li><a href="news.html">Чистота водойм Харкова</a></li>
+              <li><a href="sing_up.html">Стан зелених зон</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Допомога</a>
+            <ul class="dropdown-content">
+              <li><a href="Suggestions.html">Поради щодо збереження довкілля</a></li>
+              <li><a href="Eco help.html">Еко-волонтерство</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+      </nav>
+    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>    
+  </header>
+
+  <main>
+    <h2 id="eco-title"> Якість повітря в Харкові</h2>
+    <div class="content-container">
+      <img src="images/Air Pollution.jpg" alt="Pollution Image">
+      <div class="content-text" id="eco-content">
+        Якість повітря в Харкові — це важливий аспект, що впливає на здоров'я мешканців міста та екологічний станрегіону. В останні роки ми спостерігаємо погіршення якості повітря через різні фактори, зокрема високий рівень забруднення від транспорту, промислових підприємств та інших джерел. Забруднення повітря має серйозні наслідки для здоров'я людей, зокрема сприяє розвитку респіраторних захворювань
+        та погіршує якість життя. Одним з основних забруднювачів є викиди з автомобільного транспорту, особливо в
+        центрі міста.
+      </div>
+    
+    </div>
+  
+    <h2 id="war-title">Війна та її вплив на повітря</h2>
+    <div class="content-container">
+      <img src="images/Air Pollution1.jpg" alt="War Impact Image">
+      <div class="content-text" id="war-content">
+        Війна має значний вплив на навколишнє середовище, зокрема на якість повітря. У зв'язку з бойовими діями в Харкові,
+            зокрема через обстріли, вибухи та пожежі, місто зазнало серйозних змін у рівні забруднення повітря. Під час вибухів та руйнувань відбувається викид великої кількості пилу, токсичних газів та шкідливих часток у
+        повітря, що негативно впливає на здоров'я мешканців. Багато промислових об'єктів було зруйновано або зазнало
+        серйозних пошкоджень, що також спричинило збільшення забруднення.Військові операції, що супроводжуються використанням великої кількості вибухових речовин, спричиняють величезний
+        викид диму та токсичних газів, таких як оксиди азоту та вуглецю, які погіршують якість повітря та створюють
+        небезпеку для здоров'я населення.</div>
+    </div>
+    
+    <div id="video-container">
+      <iframe id="video-ukr" width="100%" height="315" src="https://www.youtube.com/embed/DqduUmh0qR0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <a href="#" class="scrollToTop" style="display: none;">
+      <img src="images/Green arrow.png" alt="Scroll to top">
+    </a>   
+    
+    
+  </main>
+  <footer class="footer">
+    <p>2024 Екологія Харкова | Сайт розроблено як проект Малої Академії Наук України</p>
+    <p>Сайт розробляв Бойко Андрій Сергійович</p>
+    </footer>
+    <script>
+function changeLanguage() {
+  const lang = document.getElementById("lang-btn").innerText;
+
+  // Вибір елементів
+  const videoUkr = document.getElementById("video-ukr");
+  const videoEng = document.getElementById("video-eng");
+
+  if (lang === "English") {
+    // Зміна на англійську мову
+    document.getElementById("lang-btn").innerText = "Українська";
+    document.getElementById("title").innerText = "Ecology of Kharkiv 🌱";
+    document.getElementById("eco-title").innerText = "Cleanliness of Kharkiv reservoirs";
+    document.getElementById("eco-content").innerText = 
+      "The air quality in Kharkiv is an important factor that affects the health of the city's residents and the ecological state of the region. In recent years, we have observed a decline in air quality due to various factors, including high levels of pollution from transportation, industrial enterprises, and other sources.Air pollution has serious health consequences, including the development of respiratory diseases and a decrease in quality of life. One of the main pollutants is emissions from motor vehicles, especially in the city center.";
+    document.getElementById("war-title").innerText = "War and its impact on the air";
+    document.getElementById("war-content").innerText = 
+      "War has a significant impact on the environment, particularly on air quality. Due to the ongoing military conflict in Kharkiv, the city has experienced major changes in air pollution levels, caused by shelling, explosions, and fires.Explosions and destruction release a large amount of dust, toxic gases, and harmful particles into the air, which negatively affects the health of residents. Many industrial facilities were destroyed or severely damaged, leading to increased pollution.Military operations, which involve the use of large quantities of explosives, result in massive emissions of smoke and toxic gases, such as nitrogen and carbon oxides, which degrade air quality and pose a health risk to the population.";
+
+    // Зміна текстів у навігації
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const englishTexts = [
+      "Home",
+      "Pages",
+      "History of Kharkiv",
+      "Ecological problems",
+      "Waste Status and Recycling",
+      "Cleanliness of Water Bodies in Kharkiv",
+      "State of Green Zones",
+      "Volunteering",
+      "Tips for Environmental Conservation",
+      "Eco-volunteering",
+    ];
+    navLinks.forEach((link, index) => {
+      link.innerText = englishTexts[index];
+    });
+
+  } else {
+    // Зміна на українську мову
+    document.getElementById("lang-btn").innerText = "English";
+    document.getElementById("title").innerText = "Екологія Харкова 🌱";
+    document.getElementById("eco-title").innerText = "Чистота водойм Харкова";
+    document.getElementById("eco-content").innerText = 
+      "Якість повітря в Харкові — це важливий аспект, що впливає на здоров'я мешканців міста та екологічний станрегіону. В останні роки ми спостерігаємо погіршення якості повітря через різні фактори, зокрема високий рівень забруднення від транспорту, промислових підприємств та інших джерел. Забруднення повітря має серйозні наслідки для здоров'я людей, зокрема сприяє розвитку респіраторних захворювань та погіршує якість життя. Одним з основних забруднювачів є викиди з автомобільного транспорту, особливо в центрі міста.";
+    document.getElementById("war-title").innerText = "Війна та її вплив на повітря";
+    document.getElementById("war-content").innerText = 
+    "Війна має значний вплив на навколишнє середовище, зокрема на якість повітря. У зв’язку з триваючим військовим конфліктом у Харкові місто зазнало серйозних змін у рівнях забруднення повітря, спричинених обстрілами, вибухами та пожежами. Вибухи та руйнування вивільняють велику кількість пилу, токсичних газів і шкідливих часток у повітрі, що негативно впливає на здоров'я жителів, багато промислових об'єктів було зруйновано або серйозно пошкоджено, що призвело до збільшення забруднення. у масових викидах диму та токсичних газів, таких як оксиди азоту та вуглецю, які погіршують якість повітря та становлять ризик для здоров’я населення.";
+    // Зміна текстів у навігації
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const ukrainianTexts = [
+      "Головна",
+      "Сторінки",
+      "Історія Харкова",
+      "Екологічні проблеми Харкова",
+      "Статус та переробка відходів",
+      "Чистота водойм Харкова",
+      "Стан зелених зон",
+      "Допомога",
+      "Поради щодо збереження довкілля",
+      "Еко-волонтерство",
+    ];
+    navLinks.forEach((link, index) => {
+      link.innerText = ukrainianTexts[index];
+    });
+    window.addEventListener('scroll', () => {
+    const scrollToTop = document.querySelector('.scrollToTop');
+    if (window.scrollY > 200) {
+      scrollToTop.style.display = 'inline';
+    } else {
+      scrollToTop.style.display = 'none';
+    }
+  });
+
+  // Плавний перехід до початку
+  document.querySelector('.scrollToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+
+  }
+}
+
+
+    </script>
+</body>  

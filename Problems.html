@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Екологія Харкова</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #e8f5e9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    .header h1 {
+      font-size: 26px;
+      letter-spacing: 1px;
+      margin-right: auto;
+    }
+    .scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scrollToTop img {
+  width: 50px;
+  height: 50px;
+}
+
+    .nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flex container for navigation items */
+  list-style-type: none; /* Remove bullet points */
+  justify-content: center; /* Center align the nav links */
+}
+
+.nav-links .dropdown {
+  position: relative;
+  display: inline-block; /* Keep dropdown inline */
+  list-style-type: none; /* Remove bullet points */
+  margin-right: 20px;
+}
+
+/* Style for the dropdown menu */
+.nav-links .dropdown-content {
+  list-style-type: none; /* Remove bullet points */
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: #08420f;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners */
+  /* Use column layout to stack items vertically */
+  display: block; /* Ensures the items are displayed vertically */
+}
+
+.nav-links .dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners for dropdown items */
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #155014;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px; /* Rounded corners for links */
+}
+
+.nav-links a:hover {
+  color: #80e27e;
+  background-color: rgba(128, 226, 126, 0.2);
+}
+
+.nav-links li {
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Display dropdown content when hovering */
+.nav-links li:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Smooth visibility */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.content1-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  width: 100%;
+  justify-content: flex-start;
+  padding: 25px;
+  background-color: #f1f8e9;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  color: #444;
+}
+
+.image-container {
+  display: flex; /* Align images horizontally */
+  gap: 10px; /* Add space between images */
+  width: 100%; /* Stretch images across the available width */
+}
+
+.image-container img {
+  width: 33%; /* Adjust width of each image */
+  object-fit: cover; /* Maintain image aspect ratio and cover container */
+  border-radius: 15px; /* Закруглення кутів картинки */
+
+}
+
+.content1-text {
+  text-align: center; /* Center text if needed */
+  margin-top: 20px; /* Space between images and text */
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+
+
+    .lang-button {
+      background-color: #388e3c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: color 0.3s ease;
+      margin-left: 20px;
+      font-size: medium;
+    }
+    .lang-button:hover {
+      color: #80e27e;
+    }
+    main {
+      flex: 1;
+      margin-top: 80px;
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 30px;
+      animation: fadeIn 0.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    main h2 {
+      color: #388e3c;
+      font-size: 32px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+    .content-container {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 25px;
+      background-color: #f1f8e9;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      color: #444;
+    }
+    .content-container img {
+      width: 48%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .content-text {
+      width: 48%;
+      padding: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    .footer {
+      background-color: #388e3c;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      position: relative;
+      margin-top: auto;
+      font-size: 14px;
+    }
+    .footer p {
+      font-size: 16px;
+    }
+    .video-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 20px;
+      margin: 10px 5px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .video-container {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+    }
+    .video-container iframe {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .video-link:hover {
+      background-color: #80e27e;
+      color: #333;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    .video-link i {
+      margin-right: 8px;
+      font-size: 18px;
+    }
+    @media (max-width: 768px) {
+      .header {
+        padding: 10px 20px;
+      }
+      .header h1 {
+        font-size: 22px;
+        margin-right: 0;
+      }
+      .nav-links a {
+        margin-left: 15px;
+        font-size: 14px;
+      }
+      .content-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .content-container img {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      .content-text {
+        width: 80%;
+      }
+      .video-link {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+    }
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 20px;
+      }
+      main h2 {
+        font-size: 26px;
+      }
+      .nav-links a {
+        font-size: 14px;
+        margin-left: 10px;
+      }
+      .content-container {
+        padding: 15px;
+      }
+      .content-container img {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      .content-text {
+        width: 90%;
+        font-size: 16px;
+      }
+      .footer p {
+        font-size: 14px;
+      }
+      /* Responsive Video Container */
+.video-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;  /* Centers the video horizontally */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.video-container iframe {
+  max-width: 100%;  /* Makes the video responsive */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the video links */
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #388e3c;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.video-link:hover {
+  background-color: #80e27e;
+  color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-link i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-container img {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .content-text {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-container img {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .content-text {
+    width: 90%;
+    font-size: 16px;
+  }
+}
+
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1 id="title">Екологія Харкова</h1>
+    <nav>
+        <ul class="nav-links">
+          <li><a href="home.html">Головна</a></li>
+          <li class="dropdown">
+            <a href="#">Сторінки</a>
+            <ul class="dropdown-content">
+              <li><a href="contact.html">Історія Харкова</a></li>
+              <li><a href="Trash.html">Стан та переробка відходів</a></li>
+              <li><a href="Freshair.html">Повітря та його якість</a></li>
+              <li><a href="news.html">Чистота водойм Харкова</a></li>
+              <li><a href="sing_up.html">Стан зелених зон</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Допомога</a>
+            <ul class="dropdown-content">
+              <li><a href="Suggestions.html">Поради щодо збереження довкілля</a></li>
+              <li><a href="Eco help.html">Еко-волонтерство</a></li>
+            </ul>
+          </li>
+        </ul>
+        
+      </nav>
+    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>    
+  </header>
+
+  <main>
+    <h2 id="eco-title">Екологічні проблеми Харкова</h2>
+    <div class="content-container">
+      <img src="images/Eco.jpg" alt="Pollution Image">
+      <div class="content-text" id="eco-content">
+        Харків, як і багато великих міст, стикається з численними екологічними проблемами. Однією з основних проблем є забруднення повітря. Низька якість повітря в Харкові зумовлена великою кількістю автомобілів, промислових підприємств і теплових електростанцій. Високий рівень забруднення створює ризики для здоров'я мешканців міста, особливо для людей, що страждають від астми та серцево-судинних захворювань. Крім того, Харків також стикається з проблемою забруднення води, що спричинено скидами промислових відходів та недостатнім очищенням стічних вод. Важливою екологічною проблемою є також нестача зелених зон та низький рівень озеленення в деяких частинах міста.      </div>
+    
+    </div>
+  
+    <h2 id="war-title">Війна та її вплив на екологію Харкова</h2>
+    <div class="content-container">
+      <img src="images/War.jpg" alt="War Impact Image">
+      <div class="content-text" id="war-content">
+        Війна, що розгорнулася на сході України в 2014 році, а також військовий конфлікт, який розпочався в 2022 році, серйозно вплинули на Харків. Внаслідок обстрілів і бомбардувань було пошкоджено багато житлових і промислових будівель, інфраструктура міста зазнала великих руйнувань. Місто переживало періоди енергетичних та водопостачальних криз, що створювало додаткові труднощі для мешканців. Крім того, війна значно вплинула на екологічний стан Харкова, оскільки численні вибухи та знищення промислових об'єктів спричинили викиди токсичних речовин в атмосферу і грунти. Після відновлення частини міста багато жителів стикаються з проблемами здоров'я через радіаційне і хімічне забруднення, яке виникло внаслідок військових дій.      </div>
+    </div>
+
+    <h2 id="eco-stage">Екологічний стан</h2>
+    <div class="content1-container">
+      <div class="image-container">
+        <img src="images/prob.jpeg" alt="War Impact Image" >
+        <img src="images/prob1.jpg" alt="War Impact Image">
+        <img src="images/prob2.jpg" alt="War Impact Image">
+      </div>
+      <div class="content1-text" id="eco-stage-content">
+        Екологічний стан міста характеризується як стабільно напружений, хоча спад виробництва частково стримують наростання негативних процесів деградації навколишнього природного середовища. За масштабами забруднення навколишнього природного середовища Харків посідає 15-17 місце в Україні. Найвагоміші чинники антропогенного навантаження на довкілля: значне зростання кількості автомобільного транспорту при надзвичайно низьких екологічних параметрах автомобілів, що спричинило збільшення шкідливих викидів в атмосферу. Це обумовило те, що автомобільний транспорт став найнесприятливішим фактором стану атмосферного повітря міста; накопичення мулового осаду, що утворюється на очисних каналізаційних спорудах міста та складується на мулових полях фільтрації, виводить з обігу 126 га міських земель (мулові поля є екологічно небезпечними, тому що призводять до забруднення: атмосферного повітря — пилом та парниковими газами (метан, метилмеркаптан), підземної гідросфери — фільтратом); понад 80 % забруднень, що надходять у водні об'єкти, і перш за все річки, припадає на неочищений поверхневий стік з території міста. Це призвело до замулювання русел, забрудненню вод, порушенню гідрологічного режиму та технічного стану річок; відсутність сучасних підприємств із переробки побутових і промислових відходів призвела до накопичення на території міста значної кількості відходів. Не менш значними є проблеми покращення стану зеленої та лісової зон Харкова, їхнього захисту від впливу фізичних факторів. Це особливо важливо через те, що місто зростає за рахунок ущільнення міської забудови.
+      </div>
+    </div>
+    
+    <div id="video-container">
+        <iframe id="video-ukr" width="100%" height="720px" src="https://www.youtube.com/embed/bPmEnzsowZs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+        <iframe id="video-eng" width="100%" height="720px" src="https://www.youtube.com/embed/tu0MaMalSlg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display:none;"></iframe>
+    </div>
+    <a href="#" class="scrollToTop" style="display: none;">
+      <img src="images/Green arrow.png" alt="Scroll to top">
+    </a>   
+    
+  </main>
+  <footer class="footer">
+    <p>2024 Екологія Харкова | Сайт розроблено як проект Малої Академії Наук України</p>
+    <p>Сайт розробляв Бойко Андрій Сергійович</p>
+    </footer>
+    <script>
+function changeLanguage() {
+  const lang = document.getElementById("lang-btn").innerText;
+
+  // Вибір елементів
+  const videoUkr = document.getElementById("video-ukr");
+  const videoEng = document.getElementById("video-eng");
+
+  if (lang === "English") {
+    // Зміна на англійську мову
+    document.getElementById("lang-btn").innerText = "Українська";
+    document.getElementById("title").innerText = "Ecology of Kharkiv";
+    document.getElementById("eco-title").innerText = "Environmental Issues of Kharkiv";
+    document.getElementById("eco-content").innerText = 
+      "Kharkiv, like many large cities, faces numerous environmental problems. One of the main issues is air pollution. The low air quality in Kharkiv is caused by the large number of cars, industrial enterprises, and thermal power plants. The high level of pollution poses health risks to the city's residents, especially for people suffering from asthma and cardiovascular diseases. Additionally, Kharkiv also faces the problem of water pollution, caused by industrial waste discharge and insufficient wastewater treatment. An important environmental issue is also the lack of green spaces and low levels of greenery in some parts of the city.";
+    document.getElementById("war-title").innerText = "War and Its Impact on ecology Kharkiv";
+    document.getElementById("war-content").innerText = 
+      "The war that broke out in eastern Ukraine in 2014, as well as the military conflict that began in 2022, had a serious impact on Kharkiv. As a result of shelling and bombing, many residential and industrial buildings were damaged, and the city's infrastructure suffered extensive destruction. The city experienced periods of energy and water supply crises, creating additional difficulties for the residents. Furthermore, the war significantly affected Kharkiv's environmental condition, as numerous explosions and the destruction of industrial facilities led to the release of toxic substances into the atmosphere and soil. After the partial restoration of the city, many residents face health problems due to radiation and chemical contamination caused by the military actions.";
+    document.getElementById("eco-stage").innerText = "Environmental condition";
+    document.getElementById("eco-stage-content").innerText=
+      "The ecological state of the city is characterized as consistently tense, although the decline in production is partially restraining the growth of negative processes of environmental degradation. In terms of the scale of environmental pollution, Kharkiv ranks 15th-17th in Ukraine. The most significant factors of anthropogenic load on the environment: a significant increase in the number of motor vehicles with extremely low environmental parameters of cars, which caused an increase in harmful emissions into the atmosphere. This led to the fact that motor vehicles became the most unfavorable factor in the state of the city's atmospheric air; the accumulation of sludge sediment, which is formed at the city's sewage treatment facilities and stored in sludge filtration fields, removes 126 hectares of urban land from circulation (sludge fields are environmentally dangerous because they lead to pollution of: atmospheric air - with dust and greenhouse gases (methane, methyl mercaptan), underground hydrosphere - with filtrate); More than 80% of the pollution entering water bodies, and primarily rivers, comes from untreated surface runoff from the city. This has led to silting of riverbeds, water pollution, disruption of the hydrological regime and technical condition of rivers; the lack of modern enterprises for the processing of household and industrial waste has led to the accumulation of a significant amount of waste in the city. No less significant are the problems of improving the condition of green and forest zones of Kharkiv, their protection from the influence of physical factors. This is especially important due to the fact that the city is growing due to the densification of urban development."
+    // Зміна текстів у навігації
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const englishTexts = [
+      "Home",
+      "Pages",
+      "History of Kharkiv",
+      "Waste Status and Recycling",
+      "Air and Its Quality",
+      "Cleanliness of Water Bodies in Kharkiv",
+      "State of Green Zones",
+      "Volunteering",
+      "Tips for Environmental Conservation",
+      "Eco-volunteering",
+    ];
+    navLinks.forEach((link, index) => {
+      link.innerText = englishTexts[index];
+    });
+
+    // Відображення англійського відео
+    videoUkr.style.display = "none";
+    videoEng.style.display = "block";
+  } else {
+    // Зміна на українську мову
+    document.getElementById("lang-btn").innerText = "English";
+    document.getElementById("title").innerText = "Екологія Харкова";
+    document.getElementById("eco-title").innerText = "Екологічні проблеми Харкова";
+    document.getElementById("eco-content").innerText = 
+      "Харків, як і багато великих міст, стикається з численними екологічними проблемами. Однією з основних проблем є забруднення повітря. Низька якість повітря в Харкові зумовлена великою кількістю автомобілів, промислових підприємств і теплових електростанцій. Високий рівень забруднення створює ризики для здоров'я мешканців міста, особливо для людей, що страждають від астми та серцево-судинних захворювань. Крім того, Харків також стикається з проблемою забруднення води, що спричинено скидами промислових відходів та недостатнім очищенням стічних вод. Важливою екологічною проблемою є також нестача зелених зон та низький рівень озеленення в деяких частинах міста.";
+    document.getElementById("war-title").innerText = "Війна та її вплив на екологію Харкова";
+    document.getElementById("war-content").innerText = 
+      "Війна, що розгорнулася на сході України в 2014 році, а також військовий конфлікт, який розпочався в 2022 році, серйозно вплинули на Харків. Внаслідок обстрілів і бомбардувань було пошкоджено багато житлових і промислових будівель, інфраструктура міста зазнала великих руйнувань. Місто переживало періоди енергетичних та водопостачальних криз, що створювало додаткові труднощі для мешканців. Крім того, війна значно вплинула на екологічний стан Харкова, оскільки численні вибухи та знищення промислових об'єктів спричинили викиди токсичних речовин в атмосферу і грунти. Після відновлення частини міста багато жителів стикаються з проблемами здоров'я через радіаційне і хімічне забруднення, яке виникло внаслідок військових дій.";
+    document.getElementById("eco-stage").innerText="Екологічний стан";
+    document.getElementById("eco-stage-content").innerText=" Екологічний стан міста характеризується як стабільно напружений, хоча спад виробництва частково стримують наростання негативних процесів деградації навколишнього природного середовища. За масштабами забруднення навколишнього природного середовища Харків посідає 15-17 місце в Україні. Найвагоміші чинники антропогенного навантаження на довкілля: значне зростання кількості автомобільного транспорту при надзвичайно низьких екологічних параметрах автомобілів, що спричинило збільшення шкідливих викидів в атмосферу. Це обумовило те, що автомобільний транспорт став найнесприятливішим фактором стану атмосферного повітря міста; накопичення мулового осаду, що утворюється на очисних каналізаційних спорудах міста та складується на мулових полях фільтрації, виводить з обігу 126 га міських земель (мулові поля є екологічно небезпечними, тому що призводять до забруднення: атмосферного повітря — пилом та парниковими газами (метан, метилмеркаптан), підземної гідросфери — фільтратом); понад 80 % забруднень, що надходять у водні об'єкти, і перш за все річки, припадає на неочищений поверхневий стік з території міста. Це призвело до замулювання русел, забрудненню вод, порушенню гідрологічного режиму та технічного стану річок; відсутність сучасних підприємств із переробки побутових і промислових відходів призвела до накопичення на території міста значної кількості відходів. Не менш значними є проблеми покращення стану зеленої та лісової зон Харкова, їхнього захисту від впливу фізичних факторів. Це особливо важливо через те, що місто зростає за рахунок ущільнення міської забудови.";
+    // Зміна текстів у навігації
+    const navLinks = document.querySelectorAll(".nav-links a");
+    const ukrainianTexts = [
+      "Головна",
+      "Сторінки",
+      "Історія Харкова",
+      "Статус та переробка відходів",
+      "Повітря та його якість",
+      "Чистота водойм Харкова",
+      "Стан зелених зон",
+      "Допомога",
+      "Поради щодо збереження довкілля",
+      "Еко-волонтерство",
+    ];
+    navLinks.forEach((link, index) => {
+      link.innerText = ukrainianTexts[index];
+    });
+
+    // Відображення українського відео
+    videoUkr.style.display = "block";
+    videoEng.style.display = "none";
+  }
+}
+window.addEventListener('scroll', () => {
+    const scrollToTop = document.querySelector('.scrollToTop');
+    if (window.scrollY > 200) {
+      scrollToTop.style.display = 'inline';
+    } else {
+      scrollToTop.style.display = 'none';
+    }
+  });
+
+  // Плавний перехід до початку
+  document.querySelector('.scrollToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+
+    </script>
+</body>  

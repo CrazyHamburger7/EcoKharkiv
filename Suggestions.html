@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ліси Харкова</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+/* Загальний стиль */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #e8f5e9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+.scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scrollToTop img {
+  width: 50px;
+  height: 50px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #388e3c;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.header h1 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-right: auto;
+}
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flex container for navigation items */
+  justify-content: center; /* Center align the nav links */
+}
+
+.nav-links .dropdown {
+  position: relative;
+  display: inline-block; /* Keep dropdown inline */
+  margin-right: 20px;
+}
+
+/* Style for the dropdown menu */
+.nav-links .dropdown-content {
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: #08420f;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners */
+  list-style-type: none; /* Remove bullet points */
+  display: block; /* Ensures the items are displayed vertically */
+}
+
+.nav-links .dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners for dropdown items */
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #155014;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px; /* Rounded corners for links */
+}
+
+.nav-links a:hover {
+  color: #80e27e;
+  background-color: rgba(128, 226, 126, 0.2);
+}
+
+.nav-links li {
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Display dropdown content when hovering */
+.nav-links li:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Smooth visibility */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.lang-button {
+  background-color: #388e3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+  margin-left: 20px;
+  font-size: medium;
+}
+.lang-button:hover {
+  color: #80e27e;
+}
+main {
+  flex: 1;
+  margin-top: 80px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+main h2 {
+  color: #388e3c;
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.content-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 25px;
+  background-color: #f1f8e9;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  color: #444;
+}
+.content-container img {
+  width: 48%;
+  height: auto;
+}
+.content-text {
+  width: 48%;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+.footer {
+  background-color: #388e3c;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  margin-top: auto;
+  font-size: 14px;
+}
+.footer p {
+  font-size: 16px;
+}
+.video-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #388e3c;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.video-link:hover {
+  background-color: #80e27e;
+  color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-link i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Адаптивність для мобільних пристроїв */
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  .header h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .nav-links {
+    display: none; /* Приховуємо для гамбургер-меню */
+    flex-direction: column;
+    background-color: #388e3c;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .nav-links a {
+    font-size: 14px;
+    padding: 10px 15px;
+    margin: 0;
+  }
+  .menu-toggle {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+  .menu-toggle.active + .nav-links {
+    display: flex;
+  }
+  main h2 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  .content-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+  .content-container img {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  .content-text {
+    width: 100%;
+    font-size: 16px;
+  }
+  .footer {
+    font-size: 14px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1 id="title">Екологія Харкова</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Головна</a></li>
+        <li class="dropdown">
+          <a href="#">Сторінки</a>
+          <ul class="dropdown-content">
+            <li><a href="contact.html">Історія Харкова</a></li>
+            <li><a href="Problems.html">Екологічні проблеми Харкова</a></li>
+            <li><a href="Trash.html">Стан та переробка відходів</a></li>
+            <li><a href="news.html">Чистота водойм Харкова</a></li>
+            <li><a href="Freshair.html">Повітря та його якість</a></li>
+            <li><a href="sing_up.html">Стан зелених зон</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Допомога</a>
+          <ul class="dropdown-content">
+            <li><a href="Eco help.html">Еко-волонтерство</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </nav>
+    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>
+  </header>
+
+  <main>
+    <h2 id="section-title">Поради щодо збереження довкілля</h2>
+    <div class="content-container">
+      <img src="images/Sugg.jpg" alt="Пожежі в лісі">
+      <div class="content-text" id="forest-content-uk">
+        <ul>
+          <li><strong>Перевіряйте енергозбереження у вашому будинку:</strong> Вимикайте електроприлади, коли вони не використовуються, та замінюйте звичайні лампочки на енергозберігаючі.</li>
+          <li><strong>Сортуйте відходи:</strong> Розділяйте пластикові, паперові та металеві відходи для подальшої переробки. Це дозволяє зменшити навантаження на сміттєзвалища і заощадити природні ресурси.</li>
+          <li><strong>Зменшуйте використання одноразових виробів:</strong> Обирайте багаторазові сумки, пляшки та контейнери. Уникайте пластикових пакетів і посуду, що не підлягає переробці.</li>
+          <li><strong>Садіть дерева та кущі:</strong> Дерева поглинають вуглекислий газ, забезпечують тінь і підтримують біорізноманіття. Більше зелених насаджень на вулицях знижують рівень забруднення повітря та шуму.</li>
+          <li><strong>Обирайте екологічно чисті транспортні засоби:</strong> Використовуйте велосипеди, ходіть пішки або їздьте на електричних авто або громадському транспорті, щоб знизити рівень забруднення повітря.</li>
+          <li><strong>Зменшуйте споживання води:</strong> Використовуйте водозберігаючі пристрої для кранів і душів, а також обирайте економічні побутові прилади, які споживають менше води.</li>
+          <li><strong>Підтримуйте та поширюйте ініціативи з охорони природи:</strong> Беріть участь у місцевих еко-акціях, таких як прибирання парків, озеленення територій або організація збору відходів для переробки.</li>
+          <li><strong>Обирайте продукти з екологічною упаковкою:</strong> Купуйте товари, упаковані в матеріали, які можна переробити або які мають менший вплив на довкілля, такі як папір чи біорозкладні пакети.</li>
+          <li><strong>Зменшуйте використання хімічних добрив та пестицидів:</strong> Це допоможе уникнути забруднення ґрунтів і водних ресурсів. Використовуйте органічні добрива та натуральні методи боротьби з шкідниками.</li>
+          <li><strong>Підтримуйте сталий розвиток:</strong> Обирайте продукти, які виготовлені з урахуванням сталого використання ресурсів та енергозбереження, і підтримуйте компанії, що дотримуються еко-стандартів у своєму виробництві.</li>
+        </ul>
+
+
+      </div>
+      <div class="content-text" id="eco-content-en" style="display: none;">
+        <p>To do your part to save the environment, you can follow a few simple but effective tips:</p>
+        <ul>
+        <li><strong>Check your home for energy efficiency:</strong> Turn off electrical appliances when not in use and replace conventional light bulbs with energy-saving ones.</li>
+        <li><strong>Sort your waste:</strong> Separate plastic, paper and metal waste for further recycling. This reduces the burden on landfills and saves natural resources.</li>
+        <li><strong>Reduce the use of disposable products:</strong> Choose reusable bags, bottles and containers. Avoid plastic bags and non-recyclable tableware.</li>
+        <li><strong>Plant trees and shrubs:</strong> Trees absorb carbon dioxide, provide shade and support biodiversity. More green spaces on the streets reduce air and noise pollution.</li>
+        <li><strong>Choose environmentally friendly means of transport:</strong> Use bicycles, walk, or take electric cars or public transport to reduce air pollution.</li>
+        <li><strong>Reduce water consumption:</strong> Use water-saving devices for taps and showers, and choose energy-efficient household appliances that use less water.</li>
+        <li><strong>Support and promote environmental initiatives:</strong> Participate in local eco-activities, such as cleaning parks, planting trees, or organizing recycling collections.</li>
+        <li><strong>Choose products with environmentally friendly packaging:</strong> Buy products packaged in materials that can be recycled or have a lower environmental impact, such as paper or biodegradable bags.</li>
+        <li><strong>Reduce the use of chemical fertilizers and pesticides:</strong> This will help avoid soil and water pollution. Use organic fertilizers and natural pest control methods.</li>
+        <li><strong>Support sustainability:</strong> Choose products that are made with sustainable use of resources and energy conservation in mind, and support companies that adhere to eco-standards in their production.</li>
+        </ul>
+      </div>
+      <a href="#" class="scrollToTop" style="display: none;">
+        <img src="Green arrow.png" alt="Scroll to top">
+      </a>   
+  </main>
+
+  <footer class="footer">
+    <p>2024 Екологія Харкова | Сайт розроблено як проект Малої Академії Наук України</p>
+    <p>Сайт розробляв Бойко Андрій Сергійович</p>
+  </footer>
+  <script>
+    function changeLanguage() {
+      let ukContent = document.querySelectorAll('.content-text[id$="-uk"]');
+      let enContent = document.querySelectorAll('.content-text[id$="-en"]');
+      let langBtn = document.getElementById('lang-btn');
+      let isEnglish = langBtn.textContent === "English";
+  
+      // Зміна тексту навігаційних посилань
+      document.querySelectorAll(".nav-links a")[0].innerHTML = isEnglish ? "Home" : "Головна";
+      document.querySelectorAll(".nav-links a")[1].innerHTML = isEnglish ? "Pages" : "Сторінки";
+      document.querySelectorAll(".nav-links a")[2].innerHTML = isEnglish ? "History of Kharkiv" : "Історія Харкова";
+      document.querySelectorAll(".nav-links a")[3].innerHTML = isEnglish ? "Ecological Problems of Kharkiv" : "Екологічні проблеми Харкова";
+      document.querySelectorAll(".nav-links a")[4].innerHTML = isEnglish ? "Waste Status and Recycling" : "Стан та переробка відходів";
+      document.querySelectorAll(".nav-links a")[5].innerHTML = isEnglish ? "Air and Its Quality" : "Повітря та його якість";
+      document.querySelectorAll(".nav-links a")[6].innerHTML = isEnglish ? "Cleanliness of Water Bodies in Kharkiv" : "Чистота водойм Харкова";
+      document.querySelectorAll(".nav-links a")[7].innerHTML = isEnglish ? "State of Green Zones" : "Стан зелених зон";
+      document.querySelectorAll(".nav-links a")[8].innerHTML = isEnglish ? "Volunteering" : "Еко-волонтерство";
+      document.querySelectorAll(".nav-links a")[9].innerHTML = isEnglish ? "Eco-Volunteering" : "Еко-волонтерство";
+  
+      // Зміна тексту заголовків та контенту
+      document.getElementById("section-title").textContent = isEnglish ? "Tips for Preserving the Environment" : "Поради щодо збереження довкілля";
+      document.getElementById("forest-content-uk").style.display = isEnglish ? "none" : "block";
+      document.getElementById("eco-content-en").style.display = isEnglish ? "block" : "none";
+      langBtn.textContent = isEnglish ? "Українська" : "English";
+
+      function toggleMenu() {
+  const toggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggle.classList.toggle('active');
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  window.addEventListener('scroll', () => {
+    const scrollToTop = document.querySelector('.scrollToTop');
+    if (window.scrollY > 200) {
+      scrollToTop.style.display = 'inline';
+    } else {
+      scrollToTop.style.display = 'none';
+    }
+  });
+
+  // Плавний перехід до початку
+  document.querySelector('.scrollToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+    }
+  </script>
+  
+  
+</body>
+</html>

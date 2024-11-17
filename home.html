@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Екологія Харкова</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e8f5e9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #388e3c;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between; /* Adjusted for better alignment */
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.header h1 {
+  font-size: 24px; /* Slightly reduced for mobile */
+  margin-right: auto;
+}
+.scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scrollToTop img {
+  width: 50px;
+  height: 50px;
+}
+
+
+/* Стилі для навігаційного меню */
+/* Main navigation links */
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flex container for navigation items */
+  justify-content: center; /* Center align the nav links */
+}
+
+.nav-links .dropdown {
+  position: relative;
+  display: inline-block; /* Keep dropdown inline */
+  margin-right: 20px;
+}
+
+/* Style for the dropdown menu */
+.nav-links .dropdown-content {
+  display: none; /* Initially hidden */
+  position: absolute;
+  background-color: #08420f;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners */
+  list-style-type: none; /* Remove bullet points */
+  display: block; /* Ensures the items are displayed vertically */
+}
+
+.nav-links .dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;  /* Rounded corners for dropdown items */
+}
+
+.nav-links .dropdown-content a:hover {
+  background-color: #155014;
+  transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px; /* Rounded corners for links */
+}
+
+.nav-links a:hover {
+  color: #80e27e;
+  background-color: rgba(128, 226, 126, 0.2);
+}
+
+.nav-links li {
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Display dropdown content when hovering */
+.nav-links li:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Smooth visibility */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Style for the language button */
+.lang-button {
+  background-color: #388e3c;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+  font-size: medium;
+}
+
+.lang-button:hover {
+  color: #80e27e;
+}
+
+
+.main-content {
+  margin-top: 80px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 30px;
+  animation: fadeIn 0.5s ease;
+  flex-grow: 1;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Kharkiv.jpg') center/cover no-repeat;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 36px; /* Adjusted for mobile */
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 16px; /* Adjusted for mobile */
+  margin-bottom: 40px;
+}
+
+.sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.sections h2 {
+  margin-bottom: 30px;
+  color: #388e3c;
+  width: 100%;
+}
+
+.sections ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sections li {
+  width: calc(33% - 20px);
+  margin-bottom: 20px;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sections li:hover {
+  transform: translateY(-5px);
+}
+
+.sections li h3 {
+  display: flex;
+  align-items: center;
+}
+
+.sections li h3 i {
+  margin-right: 10px;
+  color: #2e5c41;
+}
+
+.footer {
+  background-color: #388e3c;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  font-size: 14px;
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 20px; /* Adjust title size */
+  }
+
+  .hero h1 {
+    font-size: 28px; /* Adjust hero title */
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .sections li {
+    width: 100%; /* Stack sections vertically */
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .nav-links a {
+    font-size: 12px; /* Smaller nav links */
+    margin-left: 10px;
+  }
+
+  .lang-button {
+    font-size: 12px; /* Smaller language button */
+    padding: 6px 14px;
+  }
+}
+
+    .main-content {
+      margin-top: 80px;
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 30px;
+      animation: fadeIn 0.5s ease;
+      flex-grow: 1;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Kharkiv.jpg') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    .sections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .sections h2 {
+      margin-bottom: 30px;
+      color: #388e3c;
+      width: 100%;
+    }
+    .sections ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .sections li {
+      width: calc(33% - 20px);
+      margin-bottom: 20px;
+      text-align: left;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .sections li:hover {
+      transform: translateY(-5px);
+    }
+    .sections li h3 {
+      display: flex;
+      align-items: center;
+    }
+    .sections li h3 i {
+      margin-right: 10px;
+      color: #2e5c41;
+    }
+    .footer {
+      background-color: #388e3c;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      position: relative;
+      font-size: 14px;
+    }
+    .footer p {
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 22px;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-size: 14px;
+      }
+      .sections li {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      .nav-links a {
+        font-size: 14px;
+        margin-left: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 id="title">Екологія Харкова</h1>
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="#">Сторінки</a>
+          <ul class="dropdown-content">
+            <li><a href="contact.html">Історія Харкова</a></li>
+            <li><a href="Problems.html">Екологічні проблеми Харкова</a></li>
+            <li><a href="Trash.html">Стан та переробка відходів</a></li>
+            <li><a href="Freshair.html">Повітря та його якість</a></li>
+            <li><a href="news.html">Чистота водойм Харкова</a></li>
+            <li><a href="sing_up.html">Стан зелених зон</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#">Допомога</a>
+          <ul class="dropdown-content">
+            <li><a href="Suggestions.html">Поради щодо збереження довкілля</a></li>
+            <li><a href="Eco help.html">Еко-волонтерство</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    </nav>
+    
+    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>
+  </header>
+  
+  <div class="main-content">
+    <div class="hero">
+      <h1 id="hero-title">Піклуймося про довкілля Харкова разом!</h1>
+      <p id="hero-text">Дізнайтеся про стан екології в місті та як ми можемо допомогти природі.</p>
+    </div>
+  
+    <div class="sections" id="features-container">
+      <h2 id="features-title">Що ми пропонуємо?</h2>
+      <ul>
+        <li>
+          <h3><i class="fas fa-seedling"></i><span id="feature-education">Екологічна просвіта</span></h3>
+          <p id="feature-education-desc">Навчайтеся про екологічні проблеми та способи їх вирішення. Наші матеріали допоможуть вам дізнатися, як правильно доглядати за довкіллям.</p>
+        </li>
+        <li>
+          <h3><i class="fas fa-recycle"></i><span id="feature-recycling">Ресурси для сортування</span></h3>
+          <p id="feature-recycling-desc">Отримайте інформацію про пункти прийому вторинної сировини в Харкові та як правильно сортувати відходи для зменшення навантаження на природу.</p>
+        </li>
+        <li>
+          <h3><i class="fas fa-leaf"></i><span id="feature-initiatives">Екологічні ініціативи</span></h3>
+          <p id="feature-initiatives-desc">Долучайтеся до наших екологічних проектів і заходів, спрямованих на очищення міста, збереження природних ресурсів та покращення якості повітря.</p>
+        </li>
+      </ul> 
+    </div>
+  
+    <div class="sections" id="projects-container">
+      <h2 id="projects-title">Наші проекти</h2>
+      <ul>
+        <li>
+          <h3><i class="fas fa-water"></i><span id="project-clean-air">Чисте Повітря Харкова</span></h3>
+          <p id="project-clean-air-desc">Слідкуйте за рівнем забруднення повітря у місті. Наші моніторингові дані допоможуть вам дізнатися, наскільки чисте повітря навколо.</p>
+          <a href="https://www.saveecobot.com/maps/kharkiv" target="_blank" class="btn" id="project-clean-air-link">Перейти на сайт</a>
+        </li>
+        <li>
+          <h3><i class="fas fa-trash"></i><span id="project-zero-waste">Місто без сміття</span></h3>
+          <p id="project-zero-waste-desc">Долучайтеся до наших акцій з прибирання парків і вулиць. Дізнайтеся про наші заходи, які допомагають утримувати місто в чистоті.</p>
+          <a href="https://suspilne.media/kharkiv/707300-u-harkovi-vlastuvali-pribiranna-lopanskoi-nabereznoi-fotoreportaz/" target="_blank" class="btn" id="project-zero-waste-link">Перейти на сайт</a>
+        </li>
+        <li>
+          <h3><i class="fas fa-tree"></i><span id="project-tree-planting">Посадка дерев</span></h3>
+          <p id="project-tree-planting-desc">Ми висаджуємо дерева по всьому місту для покращення екології. Долучайтеся до акцій із посадки дерев і допоможіть створити зелений Харків!</p>
+          <a href="https://www.mamaplantatree.com/ua/?gad_source=1&gclid=Cj0KCQiA_9u5BhCUARIsABbMSPuJCA12QtwLI7aVF6ZukioLgFnVoBdx0K5kHDMsNHqyzzNeg4s527kaAsbkEALw_wcB" target="_blank" class="btn" id="project-tree-planting-link">Перейти на сайт</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <a href="#" class="scrollToTop" style="display: none;">
+    <img src="images/Green arrow.png" alt="Scroll to top">
+  </a>   
+  <footer class="footer">
+    <p>2024 Екологія Харкова | Сайт розроблено як проект Малої Академії Наук України</p>
+    <p>Сайт розробляв Бойко Андрій Сергійович</p>
+    </footer>
+
+  <script>
+    function changeLanguage() {
+      var title = document.getElementById('title');
+      var heroTitle = document.getElementById('hero-title');
+      var heroText = document.getElementById('hero-text');
+      var featureEducation = document.getElementById('feature-education');
+      var featureEducationDesc = document.getElementById('feature-education-desc');
+      var featureRecycling = document.getElementById('feature-recycling');
+      var featureRecyclingDesc = document.getElementById('feature-recycling-desc');
+      var featureInitiatives = document.getElementById('feature-initiatives');
+      var featureInitiativesDesc = document.getElementById('feature-initiatives-desc');
+      var projectsTitle = document.getElementById('projects-title');
+      var projectCleanAir = document.getElementById('project-clean-air');
+      var projectCleanAirDesc = document.getElementById('project-clean-air-desc');
+      var projectZeroWaste = document.getElementById('project-zero-waste');
+      var projectZeroWasteDesc = document.getElementById('project-zero-waste-desc');
+      var projectTreePlanting = document.getElementById('project-tree-planting');
+      var projectTreePlantingDesc = document.getElementById('project-tree-planting-desc');
+      var homeLink = document.getElementById('home-link');
+      var newsLink = document.getElementById('news-link');
+      var featuresTitle = document.getElementById('features-title');
+
+      if (title.innerText === 'Екологія Харкова') {
+        var lang = document.getElementById("lang-btn").innerHTML;
+        featuresTitle.innerText = (title.innerText === 'Екологія Харкова') ? 'What we offer?' : 'Що ми пропонуємо?';
+
+    document.getElementById("lang-btn").innerHTML = "Українська";
+    document.querySelectorAll(".nav-links a")[0].innerHTML = "Pages";
+    document.querySelectorAll(".nav-links a")[1].innerHTML = "History of Kharkiv";
+    document.querySelectorAll(".nav-links a")[2].innerHTML = "Ecological problems";
+    document.querySelectorAll(".nav-links a")[3].innerHTML = "Waste Status and Recycling";
+    document.querySelectorAll(".nav-links a")[4].innerHTML = "Air and Its Quality";
+    document.querySelectorAll(".nav-links a")[5].innerHTML = "Cleanliness of Water Bodies in Kharkiv";
+    document.querySelectorAll(".nav-links a")[6].innerHTML = "State of Green Zones";
+    document.querySelectorAll(".nav-links a")[7].innerHTML = "Volunteering";
+    document.querySelectorAll(".nav-links a")[8].innerHTML = "Tips for preserving the environment";
+    document.querySelectorAll(".nav-links a")[9].innerHTML = "Eco-Volunteering";
+        title.innerText = 'Ecology of Kharkiv ';
+        heroTitle.innerText = 'Let\'s take care of Kharkiv\'s environment together!';
+        heroText.innerText = 'Learn about the environmental state of the city and how we can help nature.';
+        featureEducation.innerText = 'Environmental Education';
+        featureEducationDesc.innerText = 'Learn about ecological issues and solutions. Our materials will help you understand how to properly care for the environment.';
+        featureRecycling.innerText = 'Recycling Resources';
+        featureRecyclingDesc.innerText = 'Get information on recycling points in Kharkiv and how to properly sort waste to reduce environmental impact.';
+        featureInitiatives.innerText = 'Environmental Initiatives';
+        featureInitiativesDesc.innerText = 'Join our environmental projects and activities aimed at cleaning the city, conserving natural resources, and improving air quality.';
+        projectsTitle.innerText = 'Our Projects';
+        projectCleanAir.innerText = 'Clean Air of Kharkiv';
+        projectCleanAirDesc.innerText = 'Track the air pollution level in the city. Our monitoring data will help you know how clean the air around you is.';
+        projectZeroWaste.innerText = 'Zero Waste City';
+        projectZeroWasteDesc.innerText = 'Join our clean-up actions in parks and streets. Learn about our activities that help keep the city clean.';
+        projectTreePlanting.innerText = 'Tree Planting';
+        projectTreePlantingDesc.innerText = 'We plant trees throughout the city to improve ecology. Join our tree planting events and help create a greener Kharkiv!';
+        homeLink.innerText = 'Kharkiv';
+        newsLink.innerText = 'Environmental News';
+        featuresTitle.innerText = 'What we offer?';
+        document.getElementById('lang-btn').innerText = 'Українська';
+      } else {
+        featuresTitle.innerText = (title.innerText === 'Екологія Харкова') ? 'Що ми пропонуємо?':'Що ми пропонуємо?' ;
+        document.getElementById("lang-btn").innerHTML = "English";
+          document.querySelectorAll(".nav-links a")[0].innerHTML = "Сторінки";
+          document.querySelectorAll(".nav-links a")[1].innerHTML = "Історія Харкова";
+          document.querySelectorAll(".nav-links a")[2].innerHTML = "Екологічні проблеми Харкова";
+          document.querySelectorAll(".nav-links a")[3].innerHTML = "Статус та переробка відходів";
+          document.querySelectorAll(".nav-links a")[4].innerHTML = "Повітря та його якість";
+          document.querySelectorAll(".nav-links a")[5].innerHTML = "Чистота водойм Харкова";
+          document.querySelectorAll(".nav-links a")[6].innerHTML = "Стан зелених зон";
+          document.querySelectorAll(".nav-links a")[7].innerHTML = "Допомога";
+          document.querySelectorAll(".nav-links a")[8].innerHTML = "Поради щодо збереження довкілля";
+          document.querySelectorAll(".nav-links a")[9].innerHTML = "Еко-волонтерство";
+          
+        title.innerText = 'Екологія Харкова';
+        heroTitle.innerText = 'Піклуймося про довкілля Харкова разом!';
+        heroText.innerText = 'Дізнайтеся про стан екології в місті та як ми можемо допомогти природі.';
+        featureEducation.innerText = 'Екологічна просвіта';
+        featureEducationDesc.innerText = 'Навчайтеся про екологічні проблеми та способи їх вирішення. Наші матеріали допоможуть вам дізнатися, як правильно доглядати за довкіллям.';
+        featureRecycling.innerText = 'Ресурси для сортування';
+        featureRecyclingDesc.innerText = 'Отримайте інформацію про пункти прийому вторинної сировини в Харкові та як правильно сортувати відходи для зменшення навантаження на природу.';
+        featureInitiatives.innerText = 'Екологічні ініціативи';
+        featureInitiativesDesc.innerText = 'Долучайтеся до наших екологічних проектів і заходів, спрямованих на очищення міста, збереження природних ресурсів та покращення якості повітря.';
+        projectsTitle.innerText = 'Наші проекти';
+        projectCleanAir.innerText = 'Чисте Повітря Харкова';
+        projectCleanAirDesc.innerText = 'Слідкуйте за рівнем забруднення повітря у місті. Наші моніторингові дані допоможуть вам дізнатися, наскільки чисте повітря навколо.';
+        projectZeroWaste.innerText = 'Місто без сміття';
+        projectZeroWasteDesc.innerText = 'Долучайтеся до наших акцій з прибирання парків і вулиць. Дізнайтеся про наші заходи, які допомагають утримувати місто в чистоті.';
+        projectTreePlanting.innerText = 'Посадка дерев';
+        projectTreePlantingDesc.innerText = 'Ми висаджуємо дерева по всьому місту для покращення екології. Долучайтеся до акцій із посадки дерев і допоможіть створити зелений Харків!';
+        homeLink.innerText = 'Головна';
+        newsLink.innerText = 'Новини';
+        featuresTitle.innerText = 'Що ми пропонуємо?';
+        document.getElementById('lang-btn').innerText = 'English';
+      }
+    }
+    window.addEventListener('scroll', () => {
+    const scrollToTop = document.querySelector('.scrollToTop');
+    if (window.scrollY > 200) {
+      scrollToTop.style.display = 'inline';
+    } else {
+      scrollToTop.style.display = 'none';
+    }
+  });
+
+  // Плавний перехід до початку
+  document.querySelector('.scrollToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+    
+
+  </script>
+</body>
+</html>
