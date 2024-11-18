@@ -16,6 +16,7 @@ function changeLanguage() {
       // Зміна текстів у навігації
       const navLinks = document.querySelectorAll(".nav-links a");
       const englishTexts = [
+        "Our telegram",
         "Home",
         "Pages",
         "History of Kharkiv",
@@ -41,6 +42,7 @@ function changeLanguage() {
       // Зміна текстів у навігації
       const navLinks = document.querySelectorAll(".nav-links a");
       const ukrainianTexts = [
+        "Наш телеграм",
         "Головна",
         "Сторінки",
         "Історія Харкова",
@@ -70,7 +72,7 @@ function changeLanguage() {
     });
   
     // Плавний перехід до початку
-    document.querySelector('.scrollToTop').addEventListener('click', (e) => {
+  document.querySelector('.scrollToTop').addEventListener('click', (e) => {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+  });

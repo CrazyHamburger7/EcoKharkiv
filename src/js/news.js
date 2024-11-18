@@ -16,6 +16,7 @@ function changeLanguage() {
       // Change navigation links to English
       const navLinks = document.querySelectorAll(".nav-links a");
       const englishTexts = [
+        "Our telegram",
         "Home",
         "Pages",
         "History of Kharkiv",
@@ -47,6 +48,7 @@ function changeLanguage() {
       // Change navigation links to Ukrainian
       const navLinks = document.querySelectorAll(".nav-links a");
       const ukrainianTexts = [
+        "Наш телеграм",
         "Головна",
         "Сторінки",
         "Історія Харкова",

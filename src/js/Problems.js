@@ -21,6 +21,7 @@ function changeLanguage() {
       // Зміна текстів у навігації
       const navLinks = document.querySelectorAll(".nav-links a");
       const englishTexts = [
+        "Our telegram",
         "Home",
         "Pages",
         "History of Kharkiv",
@@ -54,6 +55,7 @@ function changeLanguage() {
       // Зміна текстів у навігації
       const navLinks = document.querySelectorAll(".nav-links a");
       const ukrainianTexts = [
+        "Наш телеграм",
         "Головна",
         "Сторінки",
         "Історія Харкова",
