@@ -231,6 +231,33 @@ main h2 {
   margin-right: 8px;
   font-size: 18px;
 }
+.content1-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  width: 100%;
+  justify-content: flex-start;
+  padding: 25px;
+  background-color: #f1f8e9;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  color: #444;
+  }
+  .content1-container img {
+    width: 150px; /* Встанови бажану ширину */
+    height: 300px; /* Висота дорівнює ширині */
+    object-fit: cover; /* Зберігає пропорції, заповнюючи квадрат */
+    border-radius: 10%; /* Закруглені кути (можна змінити або прибрати) */
+  }
+  
+.content1-text {
+  text-align: center; /* Center text if needed */
+  margin-top: 20px; /* Space between images and text */
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+      
 @media (max-width: 768px) {
   .header {
     padding: 10px 20px;
