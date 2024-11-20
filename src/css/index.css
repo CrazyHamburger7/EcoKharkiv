@@ -345,21 +345,38 @@
       }
       @media (max-width: 600px) {
         .header h1 {
-          font-size: 22px;
+            font-size: 18px;  /* Smaller font for mobile */
         }
+    
         .hero h1 {
-          font-size: 32px;
+            font-size: 24px;  /* Smaller hero text */
         }
+    
         .hero p {
-          font-size: 14px;
+            font-size: 12px;  /* Smaller paragraph text */
         }
-        .sections li {
-          width: 100%;
-          margin-right: 0;
-          margin-bottom: 20px;
+    
+        .nav-links {
+            flex-direction: column;  /* Stack nav items vertically */
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
+    
         .nav-links a {
-          font-size: 14px;
-          margin-left: 15px;
+            margin-top: 20px;
+            font-size: 14px;  /* Smaller links */
+            margin-left: 0;
+            padding: 6px 10px;
+        }
+    
+        .sections li {
+            width: 100%;  /* Stacks the sections vertically */
+            margin-right: 0;
+        }
+    
+        .lang-button {
+            font-size: 14px;  /* Smaller language button */
+            padding: 6px 14px;
         }
       }

@@ -10,6 +10,7 @@ function changeLanguage() {
       document.getElementById("lang-btn").innerText = "Українська";
       document.getElementById("title").innerText = "Ecology of Kharkiv 🌱";
       document.getElementById("eco-title").innerText = "Cleanliness of Kharkiv reservoirs";
+      document.getElementById("map-title").innerText ="Kharkiv air quality map";
       document.getElementById("eco-content").innerText = 
         "The air quality in Kharkiv is an important factor that affects the health of the city's residents and the ecological state of the region. In recent years, we have observed a decline in air quality due to various factors, including high levels of pollution from transportation, industrial enterprises, and other sources.Air pollution has serious health consequences, including the development of respiratory diseases and a decrease in quality of life. One of the main pollutants is emissions from motor vehicles, especially in the city center.";
       document.getElementById("war-title").innerText = "War and its impact on the air";
@@ -40,6 +41,7 @@ function changeLanguage() {
       document.getElementById("lang-btn").innerText = "English";
       document.getElementById("title").innerText = "Екологія Харкова 🌱";
       document.getElementById("eco-title").innerText = "Чистота водойм Харкова";
+      document.getElementById("map-title").innerText = "Карта якості повітря Харкова";
       document.getElementById("eco-content").innerText = 
         "Якість повітря в Харкові — це важливий аспект, що впливає на здоров'я мешканців міста та екологічний станрегіону. В останні роки ми спостерігаємо погіршення якості повітря через різні фактори, зокрема високий рівень забруднення від транспорту, промислових підприємств та інших джерел. Забруднення повітря має серйозні наслідки для здоров'я людей, зокрема сприяє розвитку респіраторних захворювань та погіршує якість життя. Одним з основних забруднювачів є викиди з автомобільного транспорту, особливо в центрі міста.";
       document.getElementById("war-title").innerText = "Війна та її вплив на повітря";
