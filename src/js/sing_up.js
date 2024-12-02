@@ -4,7 +4,6 @@ function changeLanguage() {
     let langBtn = document.getElementById('lang-btn');
     let isEnglish = langBtn.textContent === "English";
 
-    // Зміна тексту навігаційних посилань
     document.querySelectorAll(".nav-links a")[0].innerHTML = isEnglish ? "Our telegram" : "Наш телеграм";
     document.querySelectorAll(".nav-links a")[1].innerHTML = isEnglish ? "Home" : "Головна";
     document.querySelectorAll(".nav-links a")[2].innerHTML = isEnglish ? "Pages" : "Сторінки";
@@ -16,17 +15,14 @@ function changeLanguage() {
     document.querySelectorAll(".nav-links a")[8].innerHTML = isEnglish ? "Tips for preserving the environment" : "Поради щодо збереження довкілля";
     document.querySelectorAll(".nav-links a")[9].innerHTML = isEnglish ? "Eco-volunteering" : "Еко-волонтерство";
 
-    // Зміна тексту в контенті
     document.getElementById('section-title').textContent = isEnglish ? "Impact of the war on the forests of Kharkiv" : "Вплив війни на ліси Харкова";
     document.getElementById('eco-title').textContent = isEnglish ? "Significant forest damage" : "Значні пошкодження лісів";
     document.getElementById('war-title').textContent = isEnglish ? "Forest on Zhuravlevka" : "Ліс на Журавльовці";
     document.getElementById('title').textContent = isEnglish ? "State of green areas" : "Стан зелених зон";
 
-    // Перемикання контенту між українською та англійською
     ukContent.forEach(el => el.style.display = isEnglish ? "none" : "block");
     enContent.forEach(el => el.style.display = isEnglish ? "block" : "none");
 
-    // Зміна тексту на кнопці
     langBtn.textContent = isEnglish ? "Ukrainian" : "English";
   }
 
@@ -39,7 +35,6 @@ function changeLanguage() {
   }
 });
 
-// Плавний перехід до початку
 document.querySelector('.scrollToTop').addEventListener('click', (e) => {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });

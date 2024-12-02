@@ -22,14 +22,14 @@
     color: white;
     padding: 15px 30px;
     display: flex;
-    justify-content: space-between; /* Adjusted for better alignment */
+    justify-content: space-between; 
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
   }
   
   .header h1 {
-    font-size: 24px; /* Slightly reduced for mobile */
+    font-size: 24px; 
     margin-right: auto;
   }
   .scrollToTop {
@@ -47,25 +47,23 @@
   }
   
   
-  /* Стилі для навігаційного меню */
-  /* Main navigation links */
+
   .nav-links {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Flex container for navigation items */
-    justify-content: center; /* Center align the nav links */
+    display: flex;
+    justify-content: center;
   }
   
   .nav-links .dropdown {
     position: relative;
-    display: inline-block; /* Keep dropdown inline */
+    display: inline-block; 
     margin-right: 20px;
   }
   
-  /* Style for the dropdown menu */
   .nav-links .dropdown-content {
-    display: none; /* Initially hidden */
+    display: none;
     position: absolute;
     background-color: #08420f;
     min-width: 160px;
@@ -76,9 +74,9 @@
     visibility: hidden;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    border-radius: 10px;  /* Rounded corners */
-    list-style-type: none; /* Remove bullet points */
-    display: block; /* Ensures the items are displayed vertically */
+    border-radius: 10px;  
+    list-style-type: none; 
+    display: block; 
   }
   
   .nav-links .dropdown-content a {
@@ -88,12 +86,12 @@
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    border-radius: 10px;  /* Rounded corners for dropdown items */
+    border-radius: 10px;  
   }
   
   .nav-links .dropdown-content a:hover {
     background-color: #155014;
-    transform: scale(1.05); /* Slight scaling effect on hover */
+    transform: scale(1.05); 
   }
   
   .nav-links a {
@@ -103,7 +101,7 @@
     margin: 10px;
     transition: color 0.3s ease, background-color 0.3s ease;
     padding: 8px 12px;
-    border-radius: 5px; /* Rounded corners for links */
+    border-radius: 5px; 
   }
   
   .nav-links a:hover {
@@ -116,17 +114,15 @@
     margin-right: 20px;
   }
   
-  /* Display dropdown content when hovering */
   .nav-links li:hover .dropdown-content {
     display: block;
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Smooth visibility */
+    transform: translateY(0); 
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
   
   
-  /* Style for the language button */
   .lang-button {
     background-color: #388e3c;
     color: white;
@@ -170,12 +166,12 @@
   }
   
   .hero h1 {
-    font-size: 36px; /* Adjusted for mobile */
+    font-size: 36px; 
     margin-bottom: 20px;
   }
   
   .hero p {
-    font-size: 16px; /* Adjusted for mobile */
+    font-size: 16px; 
     margin-bottom: 40px;
   }
   
@@ -241,11 +237,11 @@
   
   @media (max-width: 600px) {
     .header h1 {
-      font-size: 20px; /* Adjust title size */
+      font-size: 20px; 
     }
   
     .hero h1 {
-      font-size: 28px; /* Adjust hero title */
+      font-size: 28px; 
     }
   
     .hero p {
@@ -253,18 +249,18 @@
     }
   
     .sections li {
-      width: 100%; /* Stack sections vertically */
+      width: 100%; 
       margin-right: 0;
       margin-bottom: 20px;
     }
   
     .nav-links a {
-      font-size: 12px; /* Smaller nav links */
+      font-size: 12px; 
       margin-left: 10px;
     }
   
     .lang-button {
-      font-size: 12px; /* Smaller language button */
+      font-size: 12px; 
       padding: 6px 14px;
     }
   }
@@ -345,19 +341,19 @@
       }
       @media (max-width: 600px) {
         .header h1 {
-            font-size: 18px;  /* Smaller font for mobile */
+            font-size: 18px;  
         }
     
         .hero h1 {
-            font-size: 24px;  /* Smaller hero text */
+            font-size: 24px;  
         }
     
         .hero p {
-            font-size: 12px;  /* Smaller paragraph text */
+            font-size: 12px;  
         }
     
         .nav-links {
-            flex-direction: column;  /* Stack nav items vertically */
+            flex-direction: column;  
             align-items: center;
             margin-top: 20px;
             margin-bottom: 20px;
@@ -365,18 +361,18 @@
     
         .nav-links a {
             margin-top: 20px;
-            font-size: 14px;  /* Smaller links */
+            font-size: 14px; 
             margin-left: 0;
             padding: 6px 10px;
         }
     
         .sections li {
-            width: 100%;  /* Stacks the sections vertically */
+            width: 100%;  
             margin-right: 0;
         }
     
         .lang-button {
-            font-size: 14px;  /* Smaller language button */
+            font-size: 14px;  
             padding: 6px 14px;
         }
       }

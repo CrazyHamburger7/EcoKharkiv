@@ -48,19 +48,18 @@ height: 50px;
 list-style-type: none;
 margin: 0;
 padding: 0;
-display: flex; /* Flex container for navigation items */
-justify-content: center; /* Center align the nav links */
+display: flex; 
+justify-content: center; 
 }
 
 .nav-links .dropdown {
 position: relative;
-display: inline-block; /* Keep dropdown inline */
+display: inline-block;
 margin-right: 20px;
 }
 
-/* Style for the dropdown menu */
 .nav-links .dropdown-content {
-display: none; /* Initially hidden */
+display: none; 
 position: absolute;
 background-color: #08420f;
 min-width: 160px;
@@ -71,9 +70,9 @@ opacity: 0;
 visibility: hidden;
 transform: translateY(20px);
 transition: opacity 0.3s ease, transform 0.3s ease;
-border-radius: 10px;  /* Rounded corners */
-list-style-type: none; /* Remove bullet points */
-display: block; /* Ensures the items are displayed vertically */
+border-radius: 10px;  
+list-style-type: none; 
+display: block; 
 }
 
 .nav-links .dropdown-content a {
@@ -83,12 +82,12 @@ color: white;
 text-decoration: none;
 font-weight: bold;
 transition: background-color 0.3s ease, transform 0.3s ease;
-border-radius: 10px;  /* Rounded corners for dropdown items */
+border-radius: 10px;  
 }
 
 .nav-links .dropdown-content a:hover {
 background-color: #155014;
-transform: scale(1.05); /* Slight scaling effect on hover */
+transform: scale(1.05); 
 }
 
 .nav-links a {
@@ -98,7 +97,7 @@ font-weight: bold;
 margin: 10px;
 transition: color 0.3s ease, background-color 0.3s ease;
 padding: 8px 12px;
-border-radius: 5px; /* Rounded corners for links */
+border-radius: 5px; 
 }
 
 .nav-links a:hover {
@@ -111,12 +110,11 @@ position: relative;
 margin-right: 20px;
 }
 
-/* Display dropdown content when hovering */
 .nav-links li:hover .dropdown-content {
 display: block;
 opacity: 1;
 visibility: visible;
-transform: translateY(0); /* Smooth visibility */
+transform: translateY(0); 
 transition: opacity 0.3s ease, transform 0.3s ease;
 }
   .lang-button {
@@ -157,7 +155,7 @@ transition: opacity 0.3s ease, transform 0.3s ease;
     font-weight: 600;
   }
   .content-container {
-flex-direction: column; /* Розташування елементів у стовпець */
+flex-direction: column; 
 text-align: center;
 padding: 25px;
 background-color: #f1f8e9;
@@ -167,19 +165,19 @@ color: #444;
 }
 
 .content-container img {
-width: 80%; /* Зображення на всю ширину */
+width: 80%; 
 height: auto;
-margin-bottom: 20px; /* Відступ між зображенням і текстом */
+margin-bottom: 20px; 
 border-radius: 10px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .content-text {
-text-align: justify; /* Вирівнювання тексту по ширині */
-width: 100%; /* Текст займає всю ширину */
+text-align: justify; 
+width: 100%; 
 font-size: 18px;
 line-height: 1.6;
-padding: 0; /* Видалення внутрішніх відступів */
+padding: 0; 
 }
 
   .footer {
@@ -292,11 +290,10 @@ padding: 0; /* Видалення внутрішніх відступів */
     .footer p {
       font-size: 14px;
     }
-    /* Responsive Video Container */
 .video-container {
 margin-top: 20px;
 display: flex;
-justify-content: center;  /* Centers the video horizontally */
+justify-content: center;  
 padding: 10px;
 border-radius: 10px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -304,13 +301,12 @@ background-color: #f9f9f9;
 }
 
 .video-container iframe {
-max-width: 200%;  /* Makes the video responsive */
+max-width: 200%;  
 height: auto;
 border-radius: 10px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the video links */
 .video-link {
 display: inline-flex;
 align-items: center;
@@ -340,7 +336,6 @@ margin-right: 8px;
 font-size: 18px;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
 .content-container {
   flex-direction: column;

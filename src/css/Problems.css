@@ -48,22 +48,21 @@ height: 50px;
 list-style-type: none;
 margin: 0;
 padding: 0;
-display: flex; /* Flex container for navigation items */
-list-style-type: none; /* Remove bullet points */
-justify-content: center; /* Center align the nav links */
+display: flex; 
+list-style-type: none; 
+justify-content: center; 
 }
 
 .nav-links .dropdown {
 position: relative;
-display: inline-block; /* Keep dropdown inline */
-list-style-type: none; /* Remove bullet points */
+display: inline-block; 
+list-style-type: none; 
 margin-right: 20px;
 }
 
-/* Style for the dropdown menu */
 .nav-links .dropdown-content {
-list-style-type: none; /* Remove bullet points */
-display: none; /* Initially hidden */
+list-style-type: none; 
+display: none; 
 position: absolute;
 background-color: #08420f;
 min-width: 160px;
@@ -74,9 +73,8 @@ opacity: 0;
 visibility: hidden;
 transform: translateY(20px);
 transition: opacity 0.3s ease, transform 0.3s ease;
-border-radius: 10px;  /* Rounded corners */
-/* Use column layout to stack items vertically */
-display: block; /* Ensures the items are displayed vertically */
+border-radius: 10px;  
+display: block; 
 }
 
 .nav-links .dropdown-content a {
@@ -86,12 +84,12 @@ color: white;
 text-decoration: none;
 font-weight: bold;
 transition: background-color 0.3s ease, transform 0.3s ease;
-border-radius: 10px;  /* Rounded corners for dropdown items */
+border-radius: 10px;  
 }
 
 .nav-links .dropdown-content a:hover {
 background-color: #155014;
-transform: scale(1.05); /* Slight scaling effect on hover */
+transform: scale(1.05); 
 }
 
 .nav-links a {
@@ -101,7 +99,7 @@ font-weight: bold;
 margin: 10px;
 transition: color 0.3s ease, background-color 0.3s ease;
 padding: 8px 12px;
-border-radius: 5px; /* Rounded corners for links */
+border-radius: 5px;
 }
 
 .nav-links a:hover {
@@ -114,17 +112,16 @@ position: relative;
 margin-right: 20px;
 }
 
-/* Display dropdown content when hovering */
 .nav-links li:hover .dropdown-content {
 display: block;
 opacity: 1;
 visibility: visible;
-transform: translateY(0); /* Smooth visibility */
+transform: translateY(0); 
 transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .content1-container {
 display: flex;
-flex-direction: column; /* Stack elements vertically */
+flex-direction: column; 
 width: 100%;
 justify-content: flex-start;
 padding: 25px;
@@ -135,21 +132,21 @@ color: #444;
 }
 
 .image-container {
-display: flex; /* Align images horizontally */
-gap: 10px; /* Add space between images */
-width: 100%; /* Stretch images across the available width */
+display: flex; 
+gap: 10px; 
+width: 100%; 
 }
 
 .image-container img {
-width: 33%; /* Adjust width of each image */
-object-fit: cover; /* Maintain image aspect ratio and cover container */
-border-radius: 15px; /* Закруглення кутів картинки */
+width: 33%; 
+object-fit: cover; 
+border-radius: 15px; 
 
 }
 
 .content1-text {
-text-align: center; /* Center text if needed */
-margin-top: 20px; /* Space between images and text */
+text-align: center; 
+margin-top: 20px; 
 width: 100%;
 padding: 20px;
 font-size: 18px;
@@ -325,11 +322,10 @@ line-height: 1.6;
     .footer p {
       font-size: 14px;
     }
-    /* Responsive Video Container */
 .video-container {
 margin-top: 20px;
 display: flex;
-justify-content: center;  /* Centers the video horizontally */
+justify-content: center;  
 padding: 10px;
 border-radius: 10px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -337,13 +333,13 @@ background-color: #f9f9f9;
 }
 
 .video-container iframe {
-max-width: 100%;  /* Makes the video responsive */
+max-width: 100%;  
 height: auto;
 border-radius: 10px;
 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the video links */
+
 .video-link {
 display: inline-flex;
 align-items: center;
@@ -373,7 +369,6 @@ margin-right: 8px;
 font-size: 18px;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
 .content-container {
   flex-direction: column;

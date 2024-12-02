@@ -1,12 +1,10 @@
 function changeLanguage() {
     const lang = document.getElementById("lang-btn").innerText;
   
-    // Вибір елементів
     const videoUkr = document.getElementById("video-ukr");
     const videoEng = document.getElementById("video-eng");
   
     if (lang === "English") {
-      // Зміна на англійську мову
       document.getElementById("lang-btn").innerText = "Українська";
       document.getElementById("title").innerText = "Ecology of Kharkiv 🌱";
       document.getElementById("eco-title").innerText = "Cleanliness of Kharkiv reservoirs";
@@ -17,7 +15,6 @@ function changeLanguage() {
       document.getElementById("war-content").innerText = 
         "War has a significant impact on the environment, particularly on air quality. Due to the ongoing military conflict in Kharkiv, the city has experienced major changes in air pollution levels, caused by shelling, explosions, and fires.Explosions and destruction release a large amount of dust, toxic gases, and harmful particles into the air, which negatively affects the health of residents. Many industrial facilities were destroyed or severely damaged, leading to increased pollution.Military operations, which involve the use of large quantities of explosives, result in massive emissions of smoke and toxic gases, such as nitrogen and carbon oxides, which degrade air quality and pose a health risk to the population.";
   
-      // Зміна текстів у навігації
       const navLinks = document.querySelectorAll(".nav-links a");
       const englishTexts = [
         "Our telegram",
@@ -36,7 +33,6 @@ function changeLanguage() {
       });
   
     } else {
-      // Зміна на українську мову
       document.getElementById("lang-btn").innerText = "English";
       document.getElementById("title").innerText = "Екологія Харкова 🌱";
       document.getElementById("eco-title").innerText = "Чистота водойм Харкова";
@@ -46,7 +42,6 @@ function changeLanguage() {
       document.getElementById("war-title").innerText = "Війна та її вплив на повітря";
       document.getElementById("war-content").innerText = 
       "Війна має значний вплив на навколишнє середовище, зокрема на якість повітря. У зв’язку з триваючим військовим конфліктом у Харкові місто зазнало серйозних змін у рівнях забруднення повітря, спричинених обстрілами, вибухами та пожежами. Вибухи та руйнування вивільняють велику кількість пилу, токсичних газів і шкідливих часток у повітрі, що негативно впливає на здоров'я жителів, багато промислових об'єктів було зруйновано або серйозно пошкоджено, що призвело до збільшення забруднення. у масових викидах диму та токсичних газів, таких як оксиди азоту та вуглецю, які погіршують якість повітря та становлять ризик для здоров’я населення.";
-      // Зміна текстів у навігації
       const navLinks = document.querySelectorAll(".nav-links a");
       const ukrainianTexts = [
         "Наш телеграм",
@@ -77,7 +72,6 @@ function changeLanguage() {
     }
     });
     
-    // Плавний перехід до початку
     document.querySelector('.scrollToTop').addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: 'smooth' });

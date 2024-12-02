@@ -47,19 +47,18 @@
 list-style-type: none;
 margin: 0;
 padding: 0;
-display: flex; /* Flex container for navigation items */
-justify-content: center; /* Center align the nav links */
+display: flex; 
+justify-content: center; 
 }
 
 .nav-links .dropdown {
 position: relative;
-display: inline-block; /* Keep dropdown inline */
+display: inline-block;
 margin-right: 20px;
 }
 
-/* Style for the dropdown menu */
 .nav-links .dropdown-content {
-display: none; /* Initially hidden */
+display: none; 
 position: absolute;
 background-color: #08420f;
 min-width: 160px;
@@ -70,9 +69,9 @@ opacity: 0;
 visibility: hidden;
 transform: translateY(20px);
 transition: opacity 0.3s ease, transform 0.3s ease;
-border-radius: 10px;  /* Rounded corners */
-list-style-type: none; /* Remove bullet points */
-display: block; /* Ensures the items are displayed vertically */
+border-radius: 10px;  
+list-style-type: none; 
+display: block; 
 }
 
 .nav-links .dropdown-content a {
@@ -82,12 +81,12 @@ color: white;
 text-decoration: none;
 font-weight: bold;
 transition: background-color 0.3s ease, transform 0.3s ease;
-border-radius: 10px;  /* Rounded corners for dropdown items */
+border-radius: 10px; 
 }
 
 .nav-links .dropdown-content a:hover {
 background-color: #155014;
-transform: scale(1.05); /* Slight scaling effect on hover */
+transform: scale(1.05); 
 }
 
 .nav-links a {
@@ -97,7 +96,7 @@ font-weight: bold;
 margin: 10px;
 transition: color 0.3s ease, background-color 0.3s ease;
 padding: 8px 12px;
-border-radius: 5px; /* Rounded corners for links */
+border-radius: 5px; 
 }
 
 .nav-links a:hover {
@@ -110,12 +109,11 @@ position: relative;
 margin-right: 20px;
 }
 
-/* Display dropdown content when hovering */
 .nav-links li:hover .dropdown-content {
 display: block;
 opacity: 1;
 visibility: visible;
-transform: translateY(0); /* Smooth visibility */
+transform: translateY(0); 
 transition: opacity 0.3s ease, transform 0.3s ease;
 }
   .lang-button {

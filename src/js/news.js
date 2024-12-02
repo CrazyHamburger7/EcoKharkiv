@@ -2,9 +2,7 @@ function changeLanguage() {
   const langBtn = document.getElementById("lang-btn");
   const lang = langBtn.innerText;
 
-  // Toggle the language
   if (lang === "English") {
-      // Change to English
       langBtn.innerText = "Українська";
       document.getElementById("title").innerText = "Ecology of Kharkiv";
       document.getElementById("eco-title").innerText = "Water resources of Kharkiv";
@@ -33,7 +31,6 @@ function changeLanguage() {
           link.innerText = englishTexts[index];
       });
   } else {
-      // Change back to Ukrainian
       langBtn.innerText = "English";
       document.getElementById("title").innerText = "Екологія Харкова";
       document.getElementById("eco-title").innerText = "Водні ресурси Харкова";
@@ -73,7 +70,6 @@ if (window.scrollY > 200) {
 }
 });
 
-// Плавний перехід до початку
 document.querySelector('.scrollToTop').addEventListener('click', (e) => {
 e.preventDefault();
 window.scrollTo({ top: 0, behavior: 'smooth' });

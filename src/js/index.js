@@ -99,7 +99,6 @@ function changeLanguage() {
   }
 });
 
-// Плавний перехід до початку
 document.querySelector('.scrollToTop').addEventListener('click', (e) => {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
