@@ -13,30 +13,31 @@
 <body>
 
   <header class="header">
-    <h1 id="title">Екологія Харкова</h1>
+    <h1 class="header1" id="title">Екологія Харкова</h1>
     <nav>
-      <ul class="nav-links">
-        <li><a href="https://t.me/ecokharkiv" color="white">Наш телеграм</a></li>
-        <li><a href="../index.html">Головна</a></li>
-        <li class="dropdown">
-          <a href="#">Сторінки</a>
-          <ul class="dropdown-content">
-            <li><a href="Problems.html">Екологічні проблеми Харкова</a></li>
-            <li><a href="Trash.html">Стан та переробка відходів</a></li>
-            <li><a href="news.html">Чистота водойм Харкова</a></li>
-            <li><a href="Freshair.html">Повітря та його якість</a></li>
-            <li><a href="sing_up.html">Стан зелених зон</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Допомога</a>
-            <ul class="dropdown-content">
-              <li><a href="Suggestions.html">Поради щодо збереження довкілля</a></li>
-            </ul>
-          </li>
-      </ul>
-    </nav>
-    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>
+        <ul class="nav-links">
+          <div id="nav_bar">
+            <div class="hamburger-menu">
+              <input id="menu__toggle" type="checkbox">
+              <label class="menu__btn" for="menu__toggle">
+                <span></span>
+              </label>
+    
+              <ul class="menu__box">
+                <li><a class="menu__item" href="../index.html">Головна</a></li>
+                <li><a class="menu__item" href="./Problems.html">Екологічні проблеми Харкова</a></li>
+                <li><a class="menu__item" href="./Trash.html">Статус та переробка відходів</a></li>
+                <li><a class="menu__item" href="./Freshair.html">Повітря та його якість</a></li>
+                <li><a class="menu__item" href="./news.html">Чистота водойм Харкова</a></li>
+                <li><a class="menu__item" href="./sing_up.html">Стан зелених зон</a></li>
+                <li><a class="menu__item" href="./Suggestions.html">Поради щодо збереження довкілля</a></li>
+                <li><a class="menu__item" href="./Contactus.html">Зв'язатися з нами</a></li>
+              </ul>
+            </div>
+          </div>
+          
+      </nav>
+    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>    
   </header>
 
   <main>
@@ -65,7 +66,6 @@
       </div>
 
       <div class="content-text" id="eco-volunteer-content-en" style="display: none;">
-        <h2 id="section-title">What is eco-volunteering?</h2>
 
         <p>Eco-volunteering is an important part of environmental protection that involves active participation of citizens in preserving nature and improving the ecological situation in their cities and communities. In Kharkiv, there are many initiatives that allow everyone to get involved in this cause.</p>
 

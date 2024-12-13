@@ -16,16 +16,15 @@ function changeLanguage() {
 
       const navLinks = document.querySelectorAll(".nav-links a");
       const englishTexts = [
-          "Our telegram",
           "Home",
-          "Pages",
           "Environmental problems of Kharkiv",
           "Waste Status and Recycling",
           "Air and Its Quality",
           "State of Green Zones",
-          "Volunteering",
           "Tips for Environmental Conservation",
           "Eco-volunteering",
+          "Contact us"
+
       ];
       navLinks.forEach((link, index) => {
           link.innerText = englishTexts[index];
@@ -44,16 +43,14 @@ function changeLanguage() {
 
       const navLinks = document.querySelectorAll(".nav-links a");
       const ukrainianTexts = [
-          "Наш телеграм",
           "Головна",
-          "Сторінки",
           "Екологічні проблеми Харкова",
           "Статус та переробка відходів",
           "Повітря та його якість",
           "Стан зелених зон",
-          "Допомога",
           "Поради щодо збереження довкілля",
           "Еко-волонтерство",
+          "Зв'язатися з нами"
       ];
       navLinks.forEach((link, index) => {
           link.innerText = ukrainianTexts[index];

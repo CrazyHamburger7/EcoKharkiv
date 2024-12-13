@@ -6,7 +6,7 @@ function changeLanguage() {
   
     if (lang === "English") {
       document.getElementById("lang-btn").innerText = "Українська";
-      document.getElementById("title").innerText = "Ecology of Kharkiv 🌱";
+      document.getElementById("title").innerText = "Ecology of Kharkiv ";
       document.getElementById("eco-title").innerText = "Cleanliness of Kharkiv reservoirs";
       document.getElementById("map-title").innerText ="Kharkiv air quality map";
       document.getElementById("eco-content").innerText = 
@@ -17,16 +17,15 @@ function changeLanguage() {
   
       const navLinks = document.querySelectorAll(".nav-links a");
       const englishTexts = [
-        "Our telegram",
         "Home",
-        "Pages",
         "Ecological problems",
         "Waste Status and Recycling",
         "Cleanliness of Water Bodies in Kharkiv",
         "State of Green Zones",
-        "Volunteering",
         "Tips for Environmental Conservation",
         "Eco-volunteering",
+        "Contact us"
+
       ];
       navLinks.forEach((link, index) => {
         link.innerText = englishTexts[index];
@@ -34,7 +33,7 @@ function changeLanguage() {
   
     } else {
       document.getElementById("lang-btn").innerText = "English";
-      document.getElementById("title").innerText = "Екологія Харкова 🌱";
+      document.getElementById("title").innerText = "Екологія Харкова ";
       document.getElementById("eco-title").innerText = "Чистота водойм Харкова";
       document.getElementById("map-title").innerText = "Карта якості повітря Харкова";
       document.getElementById("eco-content").innerText = 
@@ -44,16 +43,14 @@ function changeLanguage() {
       "Війна має значний вплив на навколишнє середовище, зокрема на якість повітря. У зв’язку з триваючим військовим конфліктом у Харкові місто зазнало серйозних змін у рівнях забруднення повітря, спричинених обстрілами, вибухами та пожежами. Вибухи та руйнування вивільняють велику кількість пилу, токсичних газів і шкідливих часток у повітрі, що негативно впливає на здоров'я жителів, багато промислових об'єктів було зруйновано або серйозно пошкоджено, що призвело до збільшення забруднення. у масових викидах диму та токсичних газів, таких як оксиди азоту та вуглецю, які погіршують якість повітря та становлять ризик для здоров’я населення.";
       const navLinks = document.querySelectorAll(".nav-links a");
       const ukrainianTexts = [
-        "Наш телеграм",
         "Головна",
-        "Сторінки",
         "Екологічні проблеми Харкова",
         "Статус та переробка відходів",
         "Чистота водойм Харкова",
         "Стан зелених зон",
-        "Допомога",
         "Поради щодо збереження довкілля",
         "Еко-волонтерство",
+        "Зв'язатися з нами"
       ];
       navLinks.forEach((link, index) => {
         link.innerText = ukrainianTexts[index];

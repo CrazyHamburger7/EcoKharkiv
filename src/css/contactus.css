@@ -1,4 +1,88 @@
-* {
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #e8f5e9;
+  }
+  .contact-container {
+    width: 800px;
+    margin-top: 20px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .contact-container h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  .contact-container form {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+  }
+  .header2{
+    margin-top: 50px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-group textarea {
+    resize: vertical;
+    height: 150px;
+  }
+  .form-group button {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .form-group button:hover {
+    background-color: #2ecc71;
+  }
+  .contact-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .contact-info p {
+    margin: 5px 0;
+    color: #555;
+  }
+  .contact-info a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  .footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #2c3e50;
+    color: #fff;
+    margin-top: 30px;
+  }
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -48,7 +132,6 @@
 
   .header1{
     margin-left: 30px;
-    margin-top: 5px;
   }
   
   .lang-button {

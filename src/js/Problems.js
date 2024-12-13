@@ -18,16 +18,14 @@ function changeLanguage() {
         "The ecological state of the city is characterized as consistently tense, although the decline in production is partially restraining the growth of negative processes of environmental degradation. In terms of the scale of environmental pollution, Kharkiv ranks 15th-17th in Ukraine. The most significant factors of anthropogenic load on the environment: a significant increase in the number of motor vehicles with extremely low environmental parameters of cars, which caused an increase in harmful emissions into the atmosphere. This led to the fact that motor vehicles became the most unfavorable factor in the state of the city's atmospheric air; the accumulation of sludge sediment, which is formed at the city's sewage treatment facilities and stored in sludge filtration fields, removes 126 hectares of urban land from circulation (sludge fields are environmentally dangerous because they lead to pollution of: atmospheric air - with dust and greenhouse gases (methane, methyl mercaptan), underground hydrosphere - with filtrate); More than 80% of the pollution entering water bodies, and primarily rivers, comes from untreated surface runoff from the city. This has led to silting of riverbeds, water pollution, disruption of the hydrological regime and technical condition of rivers; the lack of modern enterprises for the processing of household and industrial waste has led to the accumulation of a significant amount of waste in the city. No less significant are the problems of improving the condition of green and forest zones of Kharkiv, their protection from the influence of physical factors. This is especially important due to the fact that the city is growing due to the densification of urban development."
       const navLinks = document.querySelectorAll(".nav-links a");
       const englishTexts = [
-        "Our telegram",
         "Home",
-        "Pages",
         "Waste Status and Recycling",
         "Air and Its Quality",
         "Cleanliness of Water Bodies in Kharkiv",
         "State of Green Zones",
-        "Volunteering",
         "Tips for Environmental Conservation",
         "Eco-volunteering",
+        "Contact us"
       ];
       navLinks.forEach((link, index) => {
         link.innerText = englishTexts[index];
@@ -48,16 +46,14 @@ function changeLanguage() {
       document.getElementById("eco-stage-content").innerText=" Екологічний стан міста характеризується як стабільно напружений, хоча спад виробництва частково стримують наростання негативних процесів деградації навколишнього природного середовища. За масштабами забруднення навколишнього природного середовища Харків посідає 15-17 місце в Україні. Найвагоміші чинники антропогенного навантаження на довкілля: значне зростання кількості автомобільного транспорту при надзвичайно низьких екологічних параметрах автомобілів, що спричинило збільшення шкідливих викидів в атмосферу. Це обумовило те, що автомобільний транспорт став найнесприятливішим фактором стану атмосферного повітря міста; накопичення мулового осаду, що утворюється на очисних каналізаційних спорудах міста та складується на мулових полях фільтрації, виводить з обігу 126 га міських земель (мулові поля є екологічно небезпечними, тому що призводять до забруднення: атмосферного повітря — пилом та парниковими газами (метан, метилмеркаптан), підземної гідросфери — фільтратом); понад 80 % забруднень, що надходять у водні об'єкти, і перш за все річки, припадає на неочищений поверхневий стік з території міста. Це призвело до замулювання русел, забрудненню вод, порушенню гідрологічного режиму та технічного стану річок; відсутність сучасних підприємств із переробки побутових і промислових відходів призвела до накопичення на території міста значної кількості відходів. Не менш значними є проблеми покращення стану зеленої та лісової зон Харкова, їхнього захисту від впливу фізичних факторів. Це особливо важливо через те, що місто зростає за рахунок ущільнення міської забудови.";
       const navLinks = document.querySelectorAll(".nav-links a");
       const ukrainianTexts = [
-        "Наш телеграм",
         "Головна",
-        "Сторінки",
         "Статус та переробка відходів",
         "Повітря та його якість",
         "Чистота водойм Харкова",
         "Стан зелених зон",
-        "Допомога",
         "Поради щодо збереження довкілля",
         "Еко-волонтерство",
+        "Зв'язатися з нами"
       ];
       navLinks.forEach((link, index) => {
         link.innerText = ukrainianTexts[index];

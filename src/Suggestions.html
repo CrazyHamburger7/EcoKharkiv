@@ -12,37 +12,37 @@
 <body>
 
   <header class="header">
-    <h1 id="title">Екологія Харкова</h1>
+    <h1 class="header1" id="title">Екологія Харкова</h1>
     <nav>
-      <ul class="nav-links">
-        <li><a href="https://t.me/ecokharkiv" color="white">Наш телеграм</a></li>
-        <li><a href="../index.html">Головна</a></li>
-        <li class="dropdown">
-          <a href="#">Сторінки</a>
-          <ul class="dropdown-content">
-            <li><a href="Problems.html">Екологічні проблеми Харкова</a></li>
-            <li><a href="Trash.html">Стан та переробка відходів</a></li>
-            <li><a href="news.html">Чистота водойм Харкова</a></li>
-            <li><a href="Freshair.html">Повітря та його якість</a></li>
-            <li><a href="sing_up.html">Стан зелених зон</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Допомога</a>
-          <ul class="dropdown-content">
-            <li><a href="Eco help.html">Еко-волонтерство</a></li>
-          </ul>
-        </li>
-      </ul>
-      
-    </nav>
-    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>
+        <ul class="nav-links">
+          <div id="nav_bar">
+            <div class="hamburger-menu">
+              <input id="menu__toggle" type="checkbox">
+              <label class="menu__btn" for="menu__toggle">
+                <span></span>
+              </label>
+    
+              <ul class="menu__box">
+                <li><a class="menu__item" href="../index.html">Головна</a></li>
+                <li><a class="menu__item" href="./Problems.html">Екологічні проблеми Харкова</a></li>
+                <li><a class="menu__item" href="./Trash.html">Статус та переробка відходів</a></li>
+                <li><a class="menu__item" href="./Freshair.html">Повітря та його якість</a></li>
+                <li><a class="menu__item" href="./news.html">Чистота водойм Харкова</a></li>
+                <li><a class="menu__item" href="./sing_up.html">Стан зелених зон</a></li>
+                <li><a class="menu__item" href="./Eco help.html">Еко-волонтерство</a></li>
+                <li><a class="menu__item" href="./Contactus.html">Зв'язатися з нами</a></li>
+              </ul>
+            </div>
+          </div>
+          
+      </nav>
+    <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>    
   </header>
 
   <main>
     <h2 id="section-title">Поради щодо збереження довкілля</h2>
     <div class="content-container">
-      <img src="images/Sugg.jpg" alt="Пожежі в лісі">
+      <img id="tips-image" src="./images/Sugg.jpg" alt="Environmental Tips">
       <div class="content-text" id="forest-content-uk">
         <ul>
           <li><strong>Перевіряйте енергозбереження у вашому будинку:</strong> Вимикайте електроприлади, коли вони не використовуються, та замінюйте звичайні лампочки на енергозберігаючі.</li>
@@ -60,7 +60,6 @@
 
       </div>
       <div class="content-text" id="eco-content-en" style="display: none;">
-        <p>To do your part to save the environment, you can follow a few simple but effective tips:</p>
         <ul>
         <li><strong>Check your home for energy efficiency:</strong> Turn off electrical appliances when not in use and replace conventional light bulbs with energy-saving ones.</li>
         <li><strong>Sort your waste:</strong> Separate plastic, paper and metal waste for further recycling. This reduces the burden on landfills and saves natural resources.</li>

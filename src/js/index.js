@@ -1,105 +1,93 @@
+const translations = {
+  "uk": {
+    "title": "Екологія Харкова",
+    "hero-title": "Піклуймося про довкілля Харкова разом!",
+    "hero-text": "Дізнайтеся про стан екології в місті та як ми можемо допомогти природі.",
+    "features-title": "Що ми пропонуємо?",
+    "feature-education": "Екологічна просвіта",
+    "feature-education-desc": "Навчайтеся про екологічні проблеми та способи їх вирішення. Наші матеріали допоможуть вам дізнатися, як правильно доглядати за довкіллям.",
+    "feature-recycling": "Ресурси для сортування",
+    "feature-recycling-desc": "Отримайте інформацію про пункти прийому вторинної сировини в Харкові та як правильно сортувати відходи для зменшення навантаження на природу.",
+    "feature-initiatives": "Екологічні ініціативи",
+    "feature-initiatives-desc": "Долучайтеся до наших екологічних проектів і заходів, спрямованих на очищення міста, збереження природних ресурсів та покращення якості повітря.",
+    "projects-title": "Наші проекти",
+    "project-clean-air": "Чисте Повітря Харкова",
+    "project-clean-air-desc": "Слідкуйте за рівнем забруднення повітря у місті. Наші моніторингові дані допоможуть вам дізнатися, наскільки чисте повітря навколо.",
+    "project-zero-waste": "Місто без сміття",
+    "project-zero-waste-desc": "Долучайтеся до наших акцій з прибирання парків і вулиць. Дізнайтеся про наші заходи, які допомагають утримувати місто в чистоті.",
+    "project-tree-planting": "Посадка дерев",
+    "project-tree-planting-desc": "Ми висаджуємо дерева по всьому місту для покращення екології. Долучайтеся до акцій із посадки дерев і допоможіть створити зелений Харків!",
+    "footer-text": "2024 Екологія Харкова | Сайт розроблено як проект Малої Академії Наук України",
+    "menu-item-1": "Екологічні проблеми Харкова",
+    "menu-item-2": "Стан та переробка відходів",
+    "menu-item-3": "Повітря та його якість",
+    "menu-item-4": "Чистота водойм Харкова",
+    "menu-item-5": "Стан зелених зон",
+    "menu-item-6": "Поради щодо збереження довкілля",
+    "menu-item-7": "Еко-волонтерство",
+    "menu-item-8": "Зв'язатися з нами"
+  },
+  "en": {
+    "title": "Ecology of Kharkiv",
+    "hero-title": "Let's take care of Kharkiv's environment together!",
+    "hero-text": "Learn about the ecological situation in the city and how we can help nature.",
+    "features-title": "What do we offer?",
+    "feature-education": "Environmental Education",
+    "feature-education-desc": "Learn about ecological problems and ways to solve them. Our materials will help you understand how to take care of the environment properly.",
+    "feature-recycling": "Recycling Resources",
+    "feature-recycling-desc": "Get information about recycling points in Kharkiv and how to sort waste correctly to reduce the impact on nature.",
+    "feature-initiatives": "Environmental Initiatives",
+    "feature-initiatives-desc": "Join our ecological projects and events aimed at cleaning the city, preserving natural resources, and improving air quality.",
+    "projects-title": "Our Projects",
+    "project-clean-air": "Clean Air of Kharkiv",
+    "project-clean-air-desc": "Monitor the air pollution levels in the city. Our monitoring data will help you understand how clean the air is around.",
+    "project-zero-waste": "Zero Waste City",
+    "project-zero-waste-desc": "Join our cleanup actions for parks and streets. Learn about our events that help keep the city clean.",
+    "project-tree-planting": "Tree Planting",
+    "project-tree-planting-desc": "We are planting trees throughout the city to improve ecology. Join our tree planting actions and help create a green Kharkiv!",
+    "footer-text": "2024 Ecology of Kharkiv | Developed as part of the Small Academy of Sciences of Ukraine project",
+    "menu-item-1": "Ecological Problems of Kharkiv",
+    "menu-item-2": "Waste Management and Recycling",
+    "menu-item-3": "Air and its Quality",
+    "menu-item-4": "Water Cleanliness in Kharkiv",
+    "menu-item-5": "State of Green Zones",
+    "menu-item-6": "Environmental Preservation Tips",
+    "menu-item-7": "Eco-volunteering",
+    "menu-item-8": "Contact us"
+  }
+};
 function changeLanguage() {
-    var title = document.getElementById('title');
-    var heroTitle = document.getElementById('hero-title');
-    var heroText = document.getElementById('hero-text');
-    var featureEducation = document.getElementById('feature-education');
-    var featureEducationDesc = document.getElementById('feature-education-desc');
-    var featureRecycling = document.getElementById('feature-recycling');
-    var featureRecyclingDesc = document.getElementById('feature-recycling-desc');
-    var featureInitiatives = document.getElementById('feature-initiatives');
-    var featureInitiativesDesc = document.getElementById('feature-initiatives-desc');
-    var projectsTitle = document.getElementById('projects-title');
-    var projectCleanAir = document.getElementById('project-clean-air');
-    var projectCleanAirDesc = document.getElementById('project-clean-air-desc');
-    var projectZeroWaste = document.getElementById('project-zero-waste');
-    var projectZeroWasteDesc = document.getElementById('project-zero-waste-desc');
-    var projectTreePlanting = document.getElementById('project-tree-planting');
-    var projectTreePlantingDesc = document.getElementById('project-tree-planting-desc');
-    var homeLink = document.getElementById('home-link');
-    var newsLink = document.getElementById('news-link');
-    var featuresTitle = document.getElementById('features-title');
+  let currentLanguage = document.getElementById("lang-btn").textContent.toLowerCase();
+  let newLanguage = currentLanguage === "english" ? "en" : "uk";
 
-    if (title.innerText === 'Екологія Харкова') {
-      var lang = document.getElementById("lang-btn").innerHTML;
-      featuresTitle.innerText = (title.innerText === 'Екологія Харкова') ? 'What we offer?' : 'Що ми пропонуємо?';
+  document.getElementById("lang-btn").textContent = newLanguage === "en" ? "Українська" : "English";
 
-  document.getElementById("lang-btn").innerHTML = "Українська";
-  document.querySelectorAll(".nav-links a")[0].innerHTML = "Our telegram";
-  document.querySelectorAll(".nav-links a")[1].innerHTML = "Pages";
-  document.querySelectorAll(".nav-links a")[2].innerHTML = "Ecological problems";
-  document.querySelectorAll(".nav-links a")[3].innerHTML = "Waste Status and Recycling";
-  document.querySelectorAll(".nav-links a")[4].innerHTML = "Air and Its Quality";
-  document.querySelectorAll(".nav-links a")[5].innerHTML = "Cleanliness of Water Bodies in Kharkiv";
-  document.querySelectorAll(".nav-links a")[6].innerHTML = "State of Green Zones";
-  document.querySelectorAll(".nav-links a")[7].innerHTML = "Volunteering";
-  document.querySelectorAll(".nav-links a")[8].innerHTML = "Tips for preserving the environment";
-  document.querySelectorAll(".nav-links a")[9].innerHTML = "Eco-Volunteering";
-      title.innerText = 'Ecology of Kharkiv ';
-      heroTitle.innerText = 'Let\'s take care of Kharkiv\'s environment together!';
-      heroText.innerText = 'Learn about the environmental state of the city and how we can help nature.';
-      featureEducation.innerText = 'Environmental Education';
-      featureEducationDesc.innerText = 'Learn about ecological issues and solutions. Our materials will help you understand how to properly care for the environment.';
-      featureRecycling.innerText = 'Recycling Resources';
-      featureRecyclingDesc.innerText = 'Get information on recycling points in Kharkiv and how to properly sort waste to reduce environmental impact.';
-      featureInitiatives.innerText = 'Environmental Initiatives';
-      featureInitiativesDesc.innerText = 'Join our environmental projects and activities aimed at cleaning the city, conserving natural resources, and improving air quality.';
-      projectsTitle.innerText = 'Our Projects';
-      projectCleanAir.innerText = 'Clean Air of Kharkiv';
-      projectCleanAirDesc.innerText = 'Track the air pollution level in the city. Our monitoring data will help you know how clean the air around you is.';
-      projectZeroWaste.innerText = 'Zero Waste City';
-      projectZeroWasteDesc.innerText = 'Join our clean-up actions in parks and streets. Learn about our activities that help keep the city clean.';
-      projectTreePlanting.innerText = 'Tree Planting';
-      projectTreePlantingDesc.innerText = 'We plant trees throughout the city to improve ecology. Join our tree planting events and help create a greener Kharkiv!';
-      homeLink.innerText = 'Kharkiv';
-      newsLink.innerText = 'Environmental News';
-      featuresTitle.innerText = 'What we offer?';
-      document.getElementById('lang-btn').innerText = 'Українська';
-    } else {
-      featuresTitle.innerText = (title.innerText === 'Екологія Харкова') ? 'Що ми пропонуємо?':'Що ми пропонуємо?' ;
-      document.getElementById("lang-btn").innerHTML = "English";
-        document.querySelectorAll(".nav-links a")[0].innerHTML = "Наш телеграм";
-        document.querySelectorAll(".nav-links a")[1].innerHTML = "Сторінки";
-        document.querySelectorAll(".nav-links a")[2].innerHTML = "Екологічні проблеми Харкова";
-        document.querySelectorAll(".nav-links a")[3].innerHTML = "Статус та переробка відходів";
-        document.querySelectorAll(".nav-links a")[4].innerHTML = "Повітря та його якість";
-        document.querySelectorAll(".nav-links a")[5].innerHTML = "Чистота водойм Харкова";
-        document.querySelectorAll(".nav-links a")[6].innerHTML = "Стан зелених зон";
-        document.querySelectorAll(".nav-links a")[7].innerHTML = "Допомога";
-        document.querySelectorAll(".nav-links a")[8].innerHTML = "Поради щодо збереження довкілля";
-        document.querySelectorAll(".nav-links a")[9].innerHTML = "Еко-волонтерство";
-        
-      title.innerText = 'Екологія Харкова';
-      heroTitle.innerText = 'Піклуймося про довкілля Харкова разом!';
-      heroText.innerText = 'Дізнайтеся про стан екології в місті та як ми можемо допомогти природі.';
-      featureEducation.innerText = 'Екологічна просвіта';
-      featureEducationDesc.innerText = 'Навчайтеся про екологічні проблеми та способи їх вирішення. Наші матеріали допоможуть вам дізнатися, як правильно доглядати за довкіллям.';
-      featureRecycling.innerText = 'Ресурси для сортування';
-      featureRecyclingDesc.innerText = 'Отримайте інформацію про пункти прийому вторинної сировини в Харкові та як правильно сортувати відходи для зменшення навантаження на природу.';
-      featureInitiatives.innerText = 'Екологічні ініціативи';
-      featureInitiativesDesc.innerText = 'Долучайтеся до наших екологічних проектів і заходів, спрямованих на очищення міста, збереження природних ресурсів та покращення якості повітря.';
-      projectsTitle.innerText = 'Наші проекти';
-      projectCleanAir.innerText = 'Чисте Повітря Харкова';
-      projectCleanAirDesc.innerText = 'Слідкуйте за рівнем забруднення повітря у місті. Наші моніторингові дані допоможуть вам дізнатися, наскільки чисте повітря навколо.';
-      projectZeroWaste.innerText = 'Місто без сміття';
-      projectZeroWasteDesc.innerText = 'Долучайтеся до наших акцій з прибирання парків і вулиць. Дізнайтеся про наші заходи, які допомагають утримувати місто в чистоті.';
-      projectTreePlanting.innerText = 'Посадка дерев';
-      projectTreePlantingDesc.innerText = 'Ми висаджуємо дерева по всьому місту для покращення екології. Долучайтеся до акцій із посадки дерев і допоможіть створити зелений Харків!';
-      homeLink.innerText = 'Головна';
-      newsLink.innerText = 'Новини';
-      featuresTitle.innerText = 'Що ми пропонуємо?';
-      document.getElementById('lang-btn').innerText = 'English';
+  for (let key in translations[newLanguage]) {
+    const element = document.getElementById(key);
+    if (element) {
+      element.textContent = translations[newLanguage][key];
     }
   }
-  window.addEventListener('scroll', () => {
-  const scrollToTop = document.querySelector('.scrollToTop');
-  if (window.scrollY > 200) {
-    scrollToTop.style.display = 'inline';
-  } else {
-    scrollToTop.style.display = 'none';
-  }
+
+  const menuItems = document.querySelectorAll('.menu__item');
+  menuItems.forEach((item, index) => {
+    const translationKey = `menu-item-${index + 1}`;
+    if (translations[newLanguage][translationKey]) {
+      item.textContent = translations[newLanguage][translationKey];
+    }
+  });
+}
+
+window.addEventListener('scroll', () => {
+const scrollToTop = document.querySelector('.scrollToTop');
+if (window.scrollY > 200) {
+  scrollToTop.style.display = 'inline';
+} else {
+  scrollToTop.style.display = 'none';
+}
 });
 
 document.querySelector('.scrollToTop').addEventListener('click', (e) => {
-  e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+e.preventDefault();
+window.scrollTo({ top: 0, behavior: 'smooth' });
 });
