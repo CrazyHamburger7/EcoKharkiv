@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="./css/contactus.css">
   <style>
-    /* Ваші стилі */
   </style>
 </head>
 <body>
@@ -35,7 +34,7 @@
     </nav>
     <button class="lang-button" onclick="changeLanguage()" id="lang-btn">English</button>
   </header>
-
+<main>
   <div class="contact-container">
     <h2 class="header2" id="contact-title">Напишіть нам</h2>
     <form>
@@ -56,16 +55,28 @@
       </div>
     </form>
 
-    <div class="contact-info" id="contact-info">
-      <p><a href="https://t.me/ecokharkiv" target="_blank">Наш телеграм</a></p>
-    </div>
   </div>
+  <a href="#" class="scrollToTop" style="display: none;">
+    <img src="./images/Green arrow.png" alt="Scroll to top">
+  </a>  
+</main>
 
+<div class="m">
+  <div class="hills-container">
+    <img src="./images/hills.png" alt="Hills" class="hills-image hills1">
+    <img src="./images/hills2.png" alt="Hills 2" class="hills-image hills2">
+    <img src="./images/hills3.png" alt="Hills 3" class="hills-image hills3">
+  </div>
   <footer class="footer">
-    <p id="footer-text">2024 Екологія Харкова | Сайт розроблено як проект Малої Академії Наук України</p>
-    <p id="developer-text">Сайт розробляв Бойко Андрій Сергійович</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+      <a href="https://t.me/ecokharkiv" target="_blank" class="fab fa-telegram"></a>
+    </div>
+    <p>2024 Екологія Харкова | Сайт розроблено як проект Малої Академії Наук України</p>
+    <p>Сайт розробляв Бойко Андрій Сергійович</p>
   </footer>
-
+</div>
+ 
   <script src="./js/contactus.js"></script>
 </body>
 </html>

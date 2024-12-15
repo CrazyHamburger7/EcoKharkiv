@@ -37,18 +37,19 @@ function toggleMenu() {
   toggle.classList.toggle('active');
   navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
 
-  window.addEventListener('scroll', () => {
-      const scrollToTop = document.querySelector('.scrollToTop');
-      if (window.scrollY > 200) {
-          scrollToTop.style.display = 'inline';
-      } else {
-          scrollToTop.style.display = 'none';
-      }
-  });
 
-  document.querySelector('.scrollToTop').addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 }
+window.addEventListener('scroll', () => {
+  const scrollToTop = document.querySelector('.scrollToTop');
+  if (window.scrollY > 200) {
+      scrollToTop.style.display = 'inline';
+  } else {
+      scrollToTop.style.display = 'none';
+  }
+});
+
+document.querySelector('.scrollToTop').addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 

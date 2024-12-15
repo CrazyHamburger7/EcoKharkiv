@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #e8f5e9;
+    max-height: 100px;
   }
   .contact-container {
     width: 800px;
@@ -26,7 +27,79 @@ body {
     flex-direction: column;
   }
   .header2{
-    margin-top: 50px;
+    margin-top: 20px;
+  }
+  .hills-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    margin-top: -350px;
+    padding: 0;
+    perspective: 1000px;
+    z-index: 1;
+  }
+  
+  .hills-image {
+    position: absolute;
+    bottom: 0;
+    width: auto;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    will-change: transform;
+    clip-path: inset(0 0 0 0);
+  }
+  
+  .m {
+    margin-bottom: 200px;
+    top: 70%;
+  }
+  
+  .hills1 {
+    z-index: 3;
+    width: 100%;
+    height: 150px;
+    transform-origin: center;
+    animation: wave 10s infinite linear;
+  }
+  
+  .hills2 {
+    z-index: 2;
+    width: 120%;
+    left: -10%;
+    transform-origin: center;
+    animation: wave 15s infinite linear;
+  }
+  
+  .hills3 {
+    z-index: 1;
+    width: 130%;
+    left: -20%;
+    transform-origin: center;
+    animation: wave 20s infinite linear;
+  }
+  .hills1, .hills2, .hills3 {
+    margin-top: 200px;
+  }
+  
+  @keyframes wave {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(15px) rotate(1deg) translateX(1px);
+    }
+    75% {
+        transform: translateY(15px) rotate(-1deg) translateX(-1px);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
   }
   .form-group {
     margin-bottom: 15px;
@@ -80,7 +153,10 @@ body {
     padding: 10px 0;
     background-color: #2c3e50;
     color: #fff;
-    margin-top: 30px;
+    margin-top: 0px;
+  }
+  .m{
+    margin-top: 20px;
   }
   * {
     margin: 0;
@@ -132,7 +208,41 @@ body {
 
   .header1{
     margin-left: 30px;
+    margin-top: 0px;
   }
+  .footer .social-icons {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    margin-right: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .footer .social-icons a {
+    margin-left: 10px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-size: 36px;
+  }
+  
+  .footer .social-icons a:hover {
+    color: #4CAF50;
+  }
+  .scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+  
+  .scrollToTop img {
+    width: 50px;
+    height: 50px;
+  }
+  
   
   .lang-button {
     background-color: #388e3c;

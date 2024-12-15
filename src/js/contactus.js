@@ -29,4 +29,17 @@ function changeLanguage() {
     textarea.style.height = 'auto';  
     textarea.style.height = (textarea.scrollHeight) + 'px';  
   }
+  window.addEventListener('scroll', () => {
+    const scrollToTop = document.querySelector('.scrollToTop');
+    if (window.scrollY > 200) {
+      scrollToTop.style.display = 'inline';
+    } else {
+      scrollToTop.style.display = 'none';
+    }
+    });
+    
+    document.querySelector('.scrollToTop').addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   

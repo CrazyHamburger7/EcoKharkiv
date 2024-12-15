@@ -1,5 +1,7 @@
 const translations = {
   "uk": {
+    "hero-title1":"Збережемо екологію Харкова для майбутніх поколінь!",
+    "hero-text1":"Досліджуйте важливі екологічні проблеми міста та дізнайтеся, як кожен із нас може сприяти збереженню природи.",
     "title": "Екологія Харкова",
     "hero-title": "Піклуймося про довкілля Харкова разом!",
     "hero-text": "Дізнайтеся про стан екології в місті та як ми можемо допомогти природі.",
@@ -28,6 +30,8 @@ const translations = {
     "menu-item-8": "Зв'язатися з нами"
   },
   "en": {
+    "hero-title1": "Let's Preserve Kharkiv's Ecology for Future Generations!",
+    "hero-text1": "Explore the city's critical environmental issues and learn how each of us can contribute to preserving nature.",
     "title": "Ecology of Kharkiv",
     "hero-title": "Let's take care of Kharkiv's environment together!",
     "hero-text": "Learn about the ecological situation in the city and how we can help nature.",
