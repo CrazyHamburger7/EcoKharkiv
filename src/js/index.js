@@ -27,7 +27,12 @@ const translations = {
     "menu-item-5": "Стан зелених зон",
     "menu-item-6": "Поради щодо збереження довкілля",
     "menu-item-7": "Еко-волонтерство",
+    "increase-font":"Збільшити текст",
+    "increase-spacing":"Збільшити інтервал",
+    "decrease-spacing": "Зменшити інтервал",
+    "decrease-font": "Зменшити текст",
     "menu-item-8": "Зв'язатися з нами"
+
   },
   "en": {
     "hero-title1": "Let's Preserve Kharkiv's Ecology for Future Generations!",
@@ -57,6 +62,10 @@ const translations = {
     "menu-item-5": "State of Green Zones",
     "menu-item-6": "Environmental Preservation Tips",
     "menu-item-7": "Eco-volunteering",
+    "increase-font":"Increase font",
+    "increase-spacing":"Increase spacing",
+    "decrease-font": "Decrease font size",
+    "decrease-spacing": "Decrease line spacing",
     "menu-item-8": "Contact us"
   }
 };
@@ -95,3 +104,62 @@ document.querySelector('.scrollToTop').addEventListener('click', (e) => {
 e.preventDefault();
 window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+function toggleAccessibilityMode() {
+  const accessibilityTools = document.getElementById("accessibility-tools");
+  
+  if (accessibilityTools.style.display === "none" || accessibilityTools.style.display === "") {
+    accessibilityTools.style.display = "block"; 
+  } else {
+    accessibilityTools.style.display = "none"; 
+  }
+}
+
+function toggleFontSize() {
+  const fontButton = document.getElementById("increase-font");
+  const currentText = fontButton.textContent; 
+
+  if (currentText === translations["uk"]["increase-font"] || currentText === translations["en"]["increase-font"]) {
+    fontButton.textContent = translations["en"]["decrease-font"];  
+    document.body.style.fontSize = "1.2em"; 
+    if (document.getElementById("lang-btn").textContent.toLowerCase() === "english") {
+      fontButton.textContent = translations["uk"]["decrease-font"];  
+
+    }
+  } else {
+    fontButton.textContent = translations["en"]["increase-font"];  
+
+    document.body.style.fontSize = "1em"; 
+    if (document.getElementById("lang-btn").textContent.toLowerCase() === "english") {
+      fontButton.textContent = translations["uk"]["increase-font"]; 
+
+    }
+  }
+}
+
+function toggleLineSpacing() {
+  const spacingButton = document.getElementById("increase-spacing");
+  const currentText = spacingButton.textContent; 
+
+  if (currentText === translations["uk"]["increase-spacing"] || currentText === translations["en"]["increase-spacing"]) {
+    document.body.style.lineHeight = "1.6"; 
+    spacingButton.textContent = translations["en"]["decrease-spacing"];  
+
+    if (document.getElementById("lang-btn").textContent.toLowerCase() === "english") {
+      spacingButton.textContent = translations["uk"]["decrease-spacing"];
+
+    }
+  } else {
+    spacingButton.textContent = translations["en"]["increase-spacing"];  
+
+    document.body.style.lineHeight = "1.4"; 
+    if (document.getElementById("lang-btn").textContent.toLowerCase() === "english") {
+      spacingButton.textContent = translations["uk"]["increase-spacing"]; 
+
+    }
+  }
+}
+
+document.getElementById("increase-font").addEventListener("click", toggleFontSize);
+document.getElementById("increase-spacing").addEventListener("click", toggleLineSpacing);

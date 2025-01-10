@@ -595,21 +595,3 @@ body {
             padding: 6px 14px;
         }
       }
-@media (max-width: 600px) {
-  .contact-container {
-    width: 90%;
-    margin: 20px auto;
-  }
-
-  .sections li {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }

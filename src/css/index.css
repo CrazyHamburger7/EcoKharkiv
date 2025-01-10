@@ -508,3 +508,57 @@ body {
       padding: 6px 14px;
   }
 }
+.accessibility-mode {
+  color: #000000;
+  font-size: 1.2em;
+  line-height: 1.8;
+}
+.accessibility-mode .header {
+  background-color: #444;
+}
+.accessibility-mode .hero {
+  background-color: #222;
+}
+.accessibility-mode .menu__box {
+  background-color: #333;
+}
+.lang-button1 {
+  background-color: #388e3c;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+  font-size: medium;
+}
+.lang-button1:hover {
+  color: #80e27e;
+}
+.accessibility-tools1{
+  background-color: #388e3c;
+  color: white;
+  padding: 8px 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+  margin-left: 10px;
+  font-size: medium;
+  
+}
+.accessibility-tools1:hover {
+  color: #80e27e;
+}
+#accessibility-tools {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  position: absolute;     
+  top: 50%;               
+  left: 50%;              
+  transform: translate(-50%, -50%); 
+}
