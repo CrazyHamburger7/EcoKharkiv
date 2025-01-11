@@ -10,7 +10,7 @@ function changeLanguage() {
   document.querySelectorAll(".nav-links a")[3].innerHTML = isEnglish ? "Air and Its Quality" : "Повітря та його якість";
   document.querySelectorAll(".nav-links a")[4].innerHTML = isEnglish ? "Cleanliness of Water Bodies in Kharkiv" : "Чистота водойм Харкова";
   document.querySelectorAll(".nav-links a")[5].innerHTML = isEnglish ? "State of Green Zones" : "Стан зелених зон";
-  document.querySelectorAll(".nav-links a")[6].innerHTML = isEnglish ? "Eco-volunteering" : "Еко-волонтерство";
+  document.querySelectorAll(".nav-links a")[6].innerHTML = isEnglish ? "Eco-volunteering" : "Ековолонтерство";
   document.querySelectorAll(".nav-links a")[7].innerHTML = isEnglish ? "Contact us" : "Зв'язатися з нами";
   document.getElementById("title").textContent = isEnglish ? "Ecology of Kharkiv" : "Екологія Харкова";
   document.getElementById("section-title").textContent = isEnglish ? "Tips for Preserving the Environment" : "Поради щодо збереження довкілля";
